@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
   --bg: #faf8f0;
@@ -48,12 +48,13 @@ body {
 
 input, textarea {
   outline: none;
-  font-family: 'Patrick Hand', cursive;
-  font-size: 1.1rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-size: 0.95rem;
 }
 
 .font-hand {
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-weight: 500;
 }
 
 @keyframes fadeIn {
