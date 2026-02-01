@@ -19,7 +19,6 @@ interface WordState {
 }
 
 function getDayKey(): string {
-  // EST midnight boundary
   const now = new Date();
   const est = new Date(now.toLocaleString("en-US", { timeZone: "America/New_York" }));
   return `${est.getFullYear()}-${String(est.getMonth() + 1).padStart(2, "0")}-${String(est.getDate()).padStart(2, "0")}`;
@@ -75,16 +74,11 @@ export default function Home() {
         const stored = getLocalState();
         const day = getDayKey();
         const dayState = stored[day] || {};
-
-        // Restore word count preference
         const savedCount = localStorage.getItem("sat-vocab-count");
         const count = savedCount ? parseInt(savedCount) : 5;
         setWordCount(count);
-
         const daily = getDailyWords(words, count);
         setDailyWords(daily);
-
-        // Init states for new words
         const states: Record<string, WordState> = {};
         for (const w of daily) {
           states[w.word] = dayState[w.word] || { phase: "define" };
@@ -139,7 +133,7 @@ export default function Home() {
       updateWordState(word.word, {
         phase: "revealed",
         userDefinition: userDef,
-        definitionFeedback: { score: 0, feedback: "Could not assess — check your connection." },
+        definitionFeedback: { score: 0, feedback: "Couldn't check — try again!" },
       });
     }
     setAssessingWord(null);
@@ -171,7 +165,7 @@ export default function Home() {
         userSentence: userSentence,
         sentenceFeedback: {
           score: 0,
-          feedback: "Could not assess — check your connection.",
+          feedback: "Couldn't check — try again!",
           improved: "",
         },
       });
@@ -180,9 +174,7 @@ export default function Home() {
   }
 
   function dismissWord(word: Word, userDef: string) {
-    // Must provide definition to dismiss
     assessDefinition(word, userDef).then(() => {
-      // After assessment, if score >= 4, mark dismissed
       setWordStates((prev) => {
         const state = prev[word.word];
         if (state?.definitionFeedback && state.definitionFeedback.score >= 4) {
@@ -204,50 +196,79 @@ export default function Home() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-[var(--text-muted)]">Loading today&apos;s words...</div>
+        <div className="font-hand text-2xl" style={{ color: "var(--text-muted)" }}>
+          Loading today&apos;s words...
+        </div>
       </div>
     );
   }
 
   return (
-    <main className="max-w-2xl mx-auto px-4 py-12">
+    <main className="max-w-xl mx-auto px-4 py-8">
       {/* Header */}
-      <header className="mb-10">
-        <h1 className="text-2xl font-semibold tracking-tight mb-1">Daily Vocab</h1>
-        <div className="flex items-center justify-between">
-          <p className="text-[var(--text-muted)] text-sm">
-            {getDayKey()} — {completedCount}/{dailyWords.length} complete
-          </p>
-          <select
-            value={wordCount}
-            onChange={(e) => {
-              const count = parseInt(e.target.value);
-              setWordCount(count);
-              localStorage.setItem("sat-vocab-count", String(count));
-              window.location.reload();
-            }}
-            className="bg-[var(--bg-card)] border border-[var(--border)] rounded px-2 py-1 text-xs text-[var(--text-muted)] cursor-pointer"
-          >
-            <option value={3}>3 words</option>
-            <option value={4}>4 words</option>
-            <option value={5}>5 words</option>
-          </select>
+      <header className="mb-8 text-center">
+        <h1 className="font-hand text-4xl mb-1" style={{ color: "var(--text)" }}>
+          Daily Vocab 📝
+        </h1>
+        <p className="text-sm" style={{ color: "var(--text-muted)" }}>
+          {getDayKey()} &middot; {allWords.length} words in the bank
+        </p>
+
+        {/* Progress tiles (Wordle-style) */}
+        <div className="flex items-center justify-center gap-2 mt-4">
+          {dailyWords.map((w, i) => {
+            const state = wordStates[w.word];
+            const done = state?.phase === "feedback" || state?.phase === "dismissed";
+            const inProgress = state?.phase === "revealed" || state?.phase === "sentence";
+            return (
+              <div
+                key={i}
+                className={`score-tile ${done ? "correct" : inProgress ? "close" : "empty"}`}
+                title={w.word}
+              >
+                {done ? "✓" : inProgress ? "~" : (i + 1)}
+              </div>
+            );
+          })}
         </div>
-        {/* Progress bar */}
-        <div className="mt-3 h-1 bg-[var(--bg-card)] rounded-full overflow-hidden">
-          <div
-            className="h-full bg-[var(--accent)] transition-all duration-500"
-            style={{ width: `${(completedCount / dailyWords.length) * 100}%` }}
-          />
+
+        <p className="text-xs mt-2" style={{ color: "var(--text-light)" }}>
+          {completedCount}/{dailyWords.length} complete
+        </p>
+
+        {/* Word count selector */}
+        <div className="mt-3 flex items-center justify-center gap-2">
+          <span className="text-xs" style={{ color: "var(--text-muted)" }}>Words per day:</span>
+          {[3, 4, 5].map((n) => (
+            <button
+              key={n}
+              onClick={() => {
+                if (n !== wordCount) {
+                  setWordCount(n);
+                  localStorage.setItem("sat-vocab-count", String(n));
+                  window.location.reload();
+                }
+              }}
+              className="w-8 h-8 rounded-md text-sm font-bold transition-all"
+              style={{
+                background: n === wordCount ? "var(--accent)" : "transparent",
+                color: n === wordCount ? "white" : "var(--text-muted)",
+                border: n === wordCount ? "none" : "2px solid var(--border-dark)",
+              }}
+            >
+              {n}
+            </button>
+          ))}
         </div>
       </header>
 
       {/* Word Cards */}
       <div className="space-y-6">
-        {activeWords.map((word) => (
+        {activeWords.map((word, idx) => (
           <WordCard
             key={word.word}
             word={word}
+            index={idx}
             state={wordStates[word.word]}
             assessing={assessingWord === word.word}
             inputValue={inputValues[word.word] || ""}
@@ -262,34 +283,59 @@ export default function Home() {
 
       {/* Dismissed section */}
       {dismissedWords.length > 0 && (
-        <div className="mt-10 pt-6 border-t border-[var(--border)]">
-          <h2 className="text-sm font-medium text-[var(--text-muted)] mb-3">
-            Already knew ({dismissedWords.length})
-          </h2>
+        <div className="mt-8 pt-4" style={{ borderTop: "2px dashed var(--border)" }}>
+          <p className="font-hand text-lg mb-2" style={{ color: "var(--text-muted)" }}>
+            Already knew these ✨
+          </p>
           <div className="flex flex-wrap gap-2">
             {dismissedWords.map((w) => (
               <span
                 key={w.word}
-                className="px-3 py-1 bg-[var(--bg-card)] border border-[var(--border)] rounded-full text-sm text-[var(--text-muted)]"
+                className="font-hand px-3 py-1 rounded-full text-sm"
+                style={{
+                  background: "var(--correct)",
+                  color: "white",
+                }}
               >
-                {w.word}
+                {w.word} ✓
               </span>
             ))}
           </div>
         </div>
       )}
 
-      {/* Stats */}
-      <footer className="mt-12 pt-6 border-t border-[var(--border)] text-center text-xs text-[var(--text-muted)]">
-        <p>160 SAT words — refreshes daily at midnight EST</p>
-        <p className="mt-1">Focus on connotation, etymology, and usage.</p>
+      {/* Footer */}
+      <footer className="mt-12 pt-6 text-center" style={{ borderTop: "2px dashed var(--border)" }}>
+        <p className="text-xs" style={{ color: "var(--text-light)" }}>
+          New words every day at midnight EST
+        </p>
+        <p className="text-xs mt-1" style={{ color: "var(--text-light)" }}>
+          Focus on <strong>connotation</strong>, <strong>etymology</strong>, and <strong>usage</strong>
+        </p>
+        <a
+          href="https://amadeuswoo.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block mt-4 px-5 py-2 rounded-full text-sm font-semibold transition-all"
+          style={{
+            background: "var(--text)",
+            color: "var(--bg)",
+          }}
+          onMouseOver={(e) => (e.currentTarget.style.opacity = "0.8")}
+          onMouseOut={(e) => (e.currentTarget.style.opacity = "1")}
+        >
+          Built by Amadeus Wu &rarr;
+        </a>
       </footer>
     </main>
   );
 }
 
+/* ─── Word Card Component ─── */
+
 function WordCard({
   word,
+  index,
   state,
   assessing,
   inputValue,
@@ -300,6 +346,7 @@ function WordCard({
   onSubmitSentence,
 }: {
   word: Word;
+  index: number;
   state: WordState;
   assessing: boolean;
   inputValue: string;
@@ -311,29 +358,45 @@ function WordCard({
 }) {
   const [sentenceInput, setSentenceInput] = useState("");
 
+  const tierLabel = word.tier === 1 ? "common" : word.tier === 2 ? "advanced" : "rare";
+  const tierColor = word.tier === 1 ? "var(--correct)" : word.tier === 2 ? "var(--yellow)" : "var(--wrong)";
+
   return (
-    <div className="animate-in bg-[var(--bg-card)] border border-[var(--border)] rounded-lg p-6">
-      {/* Word + Tier */}
-      <div className="flex items-baseline justify-between mb-4">
-        <h2 className="text-xl font-semibold" style={{ fontFamily: "Crimson Pro, serif" }}>
+    <div
+      className="notebook-card animate-in pl-10 pr-6 py-5"
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
+      {/* Word header */}
+      <div className="flex items-baseline justify-between mb-3">
+        <h2 className="font-hand text-3xl font-bold" style={{ color: "var(--text)" }}>
           {word.word}
         </h2>
-        <span className="text-xs text-[var(--text-muted)]">
-          {word.tier === 1 ? "common" : word.tier === 2 ? "advanced" : "rare"}
+        <span
+          className="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded"
+          style={{ background: tierColor, color: "white" }}
+        >
+          {tierLabel}
         </span>
       </div>
 
       {/* Phase: Define */}
       {state.phase === "define" && (
         <div>
-          <p className="text-sm text-[var(--text-muted)] mb-3">
-            What does this word mean? Focus on connotation.
+          <p className="font-hand text-lg mb-3" style={{ color: "var(--text-muted)" }}>
+            What does this word mean? Think about connotation!
           </p>
           <textarea
             value={inputValue}
             onChange={(e) => onInputChange(e.target.value)}
             placeholder="Type your definition..."
-            className="w-full bg-[var(--bg)] border border-[var(--border)] rounded-md px-3 py-2 text-sm resize-none h-20 focus:border-[var(--accent)] transition-colors"
+            className="w-full rounded-md px-3 py-2 resize-none h-20 transition-colors"
+            style={{
+              background: "var(--bg-input)",
+              border: "2px solid var(--border)",
+              color: "var(--text)",
+            }}
+            onFocus={(e) => (e.target.style.borderColor = "var(--accent)")}
+            onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
             onKeyDown={(e) => {
               if (e.key === "Enter" && !e.shiftKey && inputValue.trim()) {
                 e.preventDefault();
@@ -345,16 +408,16 @@ function WordCard({
             <button
               onClick={() => inputValue.trim() && onSubmitDefinition(inputValue.trim())}
               disabled={!inputValue.trim() || assessing}
-              className="px-4 py-1.5 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-sm rounded-md disabled:opacity-40 transition-colors"
+              className="btn-primary"
             >
-              {assessing ? "Assessing..." : "Check"}
+              {assessing ? "Checking..." : "Check ✎"}
             </button>
             <button
               onClick={() => inputValue.trim() && onDismiss(inputValue.trim())}
               disabled={!inputValue.trim() || assessing}
-              className="px-4 py-1.5 border border-[var(--border)] hover:border-[var(--text-muted)] text-[var(--text-muted)] text-sm rounded-md disabled:opacity-40 transition-colors"
+              className="btn-secondary"
             >
-              I know this one
+              I know this one 💪
             </button>
           </div>
         </div>
@@ -362,56 +425,50 @@ function WordCard({
 
       {/* Phase: Revealed */}
       {state.phase === "revealed" && (
-        <div className="space-y-4">
-          {/* Definition feedback */}
+        <div className="space-y-3 animate-in">
           {state.definitionFeedback && (
-            <div className="animate-in">
-              <ScoreBadge score={state.definitionFeedback.score} />
-              <p className="text-sm mt-2 text-[var(--text-muted)]">
+            <div className="flex items-start gap-3">
+              <ScoreTiles score={state.definitionFeedback.score} />
+              <p className="font-hand text-base pt-1" style={{ color: "var(--text-muted)" }}>
                 {state.definitionFeedback.feedback}
               </p>
             </div>
           )}
-          {/* Actual definition */}
-          <div className="bg-[var(--bg)] rounded-md p-4">
-            <p className="text-sm font-medium mb-2">Definition</p>
-            <p className="text-sm text-[var(--text-muted)]">{word.definition}</p>
-          </div>
-          {/* Connotation */}
-          <div className="bg-[var(--bg)] rounded-md p-4">
-            <p className="text-sm font-medium mb-2">Connotation</p>
-            <p className="text-sm text-[var(--text-muted)]">{word.connotation}</p>
-          </div>
-          {/* Etymology */}
-          <div className="bg-[var(--bg)] rounded-md p-4">
-            <p className="text-sm font-medium mb-2">Etymology</p>
-            <p className="text-sm text-[var(--text-muted)]">{word.roots}</p>
-          </div>
 
-          <button
-            onClick={onMoveSentence}
-            className="w-full py-2 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-sm rounded-md transition-colors"
-          >
-            Use it in a sentence →
+          <InfoBlock emoji="📖" label="Definition" text={word.definition} />
+          <InfoBlock emoji="💡" label="Connotation" text={word.connotation} />
+          <InfoBlock emoji="🌱" label="Etymology" text={word.roots} />
+
+          <button onClick={onMoveSentence} className="btn-primary w-full mt-2">
+            Now use it in a sentence →
           </button>
         </div>
       )}
 
       {/* Phase: Sentence */}
       {state.phase === "sentence" && (
-        <div>
-          <p className="text-sm text-[var(--text-muted)] mb-1">
-            <span className="text-[var(--text)]">{word.definition}</span>
+        <div className="animate-in">
+          <p className="text-sm mb-1" style={{ color: "var(--text)" }}>
+            <strong>{word.definition}</strong>
           </p>
-          <p className="text-xs text-[var(--text-muted)] mb-3 italic">{word.connotation}</p>
-          <p className="text-sm text-[var(--text-muted)] mb-3">
-            Write a sentence using <strong className="text-[var(--text)]">{word.word}</strong>.
+          <p className="font-hand text-sm italic mb-3" style={{ color: "var(--text-muted)" }}>
+            {word.connotation}
+          </p>
+          <p className="font-hand text-lg mb-3" style={{ color: "var(--text-muted)" }}>
+            Write a sentence using <strong style={{ color: "var(--text)" }}>{word.word}</strong>:
           </p>
           <textarea
             value={sentenceInput}
             onChange={(e) => setSentenceInput(e.target.value)}
             placeholder={`Use "${word.word}" in a sentence...`}
-            className="w-full bg-[var(--bg)] border border-[var(--border)] rounded-md px-3 py-2 text-sm resize-none h-20 focus:border-[var(--accent)] transition-colors"
+            className="w-full rounded-md px-3 py-2 resize-none h-20 transition-colors"
+            style={{
+              background: "var(--bg-input)",
+              border: "2px solid var(--border)",
+              color: "var(--text)",
+            }}
+            onFocus={(e) => (e.target.style.borderColor = "var(--accent)")}
+            onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
             onKeyDown={(e) => {
               if (e.key === "Enter" && !e.shiftKey && sentenceInput.trim()) {
                 e.preventDefault();
@@ -422,68 +479,100 @@ function WordCard({
           <button
             onClick={() => sentenceInput.trim() && onSubmitSentence(sentenceInput.trim())}
             disabled={!sentenceInput.trim() || assessing}
-            className="mt-3 px-4 py-1.5 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-sm rounded-md disabled:opacity-40 transition-colors"
+            className="btn-primary mt-3"
           >
-            {assessing ? "Assessing..." : "Submit"}
+            {assessing ? "Checking..." : "Submit ✎"}
           </button>
         </div>
       )}
 
       {/* Phase: Feedback */}
       {state.phase === "feedback" && (
-        <div className="space-y-4 animate-in">
-          <div className="bg-[var(--bg)] rounded-md p-4">
-            <p className="text-sm font-medium mb-1">Your sentence</p>
-            <p className="text-sm text-[var(--text-muted)] italic">&ldquo;{state.userSentence}&rdquo;</p>
+        <div className="space-y-3 animate-in">
+          <div
+            className="rounded-md px-3 py-2 font-hand text-base italic"
+            style={{ background: "var(--bg-input)", color: "var(--text-muted)" }}
+          >
+            &ldquo;{state.userSentence}&rdquo;
           </div>
+
           {state.sentenceFeedback && (
             <>
-              <ScoreBadge score={state.sentenceFeedback.score} />
-              <p className="text-sm text-[var(--text-muted)]">
-                {state.sentenceFeedback.feedback}
-              </p>
+              <div className="flex items-start gap-3">
+                <ScoreTiles score={state.sentenceFeedback.score} />
+                <p className="font-hand text-base pt-1" style={{ color: "var(--text-muted)" }}>
+                  {state.sentenceFeedback.feedback}
+                </p>
+              </div>
+
               {state.sentenceFeedback.improved && (
-                <div className="bg-[var(--bg)] rounded-md p-4 border-l-2 border-[var(--accent)]">
-                  <p className="text-sm font-medium mb-1">Sample sentence</p>
-                  <p className="text-sm text-[var(--text-muted)] italic">
+                <div
+                  className="rounded-md px-4 py-3"
+                  style={{
+                    background: "var(--bg-input)",
+                    borderLeft: "3px solid var(--accent)",
+                  }}
+                >
+                  <p className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: "var(--accent)" }}>
+                    Sample sentence
+                  </p>
+                  <p className="font-hand text-base italic" style={{ color: "var(--text)" }}>
                     &ldquo;{state.sentenceFeedback.improved}&rdquo;
                   </p>
                 </div>
               )}
             </>
           )}
-          <div className="flex gap-4 text-xs text-[var(--text-muted)] pt-2">
-            <span>{word.roots}</span>
+
+          <div className="rounded-md px-3 py-2 text-xs" style={{ background: "var(--bg-input)", color: "var(--text-light)" }}>
+            🌱 {word.roots}
           </div>
-          <div className="text-center text-xs text-[var(--success)] pt-1">✓ Complete</div>
+
+          <div className="text-center font-hand text-lg animate-pop" style={{ color: "var(--correct)" }}>
+            ✓ Done!
+          </div>
         </div>
       )}
     </div>
   );
 }
 
-function ScoreBadge({ score }: { score: number }) {
-  const color =
-    score >= 4
-      ? "var(--success)"
-      : score >= 2
-      ? "var(--warning)"
-      : "var(--error)";
-  const label =
-    score >= 4
-      ? "Strong"
-      : score >= 2
-      ? "Partial"
-      : "Needs work";
+/* ─── Score Tiles (Wordle-style) ─── */
+
+function ScoreTiles({ score }: { score: number }) {
   return (
-    <div className="flex items-center gap-2">
-      <div
-        className="w-2 h-2 rounded-full"
-        style={{ backgroundColor: color }}
-      />
-      <span className="text-xs font-medium" style={{ color }}>
-        {label} ({score}/5)
-      </span>
+    <div className="flex gap-1 shrink-0">
+      {[1, 2, 3, 4, 5].map((n) => (
+        <div
+          key={n}
+          className={`score-tile ${
+            n <= score
+              ? score >= 4 ? "correct" : score >= 2 ? "close" : "wrong"
+              : "empty"
+          }`}
+          style={{ width: 28, height: 28, fontSize: "0.75rem", animationDelay: `${n * 0.08}s` }}
+        >
+          {n <= score ? "★" : ""}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/* ─── Info Block ─── */
+
+function InfoBlock({ emoji, label, text }: { emoji: string; label: string; text: string }) {
+  return (
+    <div
+      className="rounded-md px-4 py-3"
+      style={{ background: "var(--bg-input)" }}
+    >
+      <p className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: "var(--text-muted)" }}>
+        {emoji} {label}
+      </p>
+      <p className="font-hand text-base" style={{ color: "var(--text)" }}>
+        {text}
+      </p>
     </div>
   );
 }

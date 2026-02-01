@@ -2,6 +2,35 @@ import { NextResponse } from "next/server";
 
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 
+// --- Rate limiter (in-memory, per-IP, resets on cold start) ---
+const rateMap = new Map<string, { count: number; resetAt: number }>();
+const RATE_LIMIT = 30; // requests per window
+const RATE_WINDOW_MS = 60 * 1000; // 1 minute
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateMap.get(ip);
+
+  if (!entry || now > entry.resetAt) {
+    rateMap.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS });
+    return false;
+  }
+
+  entry.count++;
+  if (entry.count > RATE_LIMIT) {
+    return true;
+  }
+  return false;
+}
+
+// Clean up stale entries every 5 minutes
+setInterval(() => {
+  const now = Date.now();
+  for (const [ip, entry] of rateMap) {
+    if (now > entry.resetAt) rateMap.delete(ip);
+  }
+}, 5 * 60 * 1000);
+
 interface AssessRequest {
   type: "definition" | "sentence";
   word: string;
@@ -41,8 +70,26 @@ async function callClaude(systemPrompt: string, userPrompt: string): Promise<str
 }
 
 export async function POST(request: Request) {
+  // Rate limit by IP
+  const forwarded = request.headers.get("x-forwarded-for");
+  const ip = forwarded?.split(",")[0]?.trim() || "unknown";
+
+  if (isRateLimited(ip)) {
+    return NextResponse.json(
+      { score: 0, feedback: "Slow down! Too many requests. Try again in a minute." },
+      { status: 429 }
+    );
+  }
+
   try {
     const body: AssessRequest = await request.json();
+
+    if (!body.userInput || body.userInput.length > 1000) {
+      return NextResponse.json(
+        { score: 0, feedback: "Invalid input." },
+        { status: 400 }
+      );
+    }
 
     if (body.type === "definition") {
       return await assessDefinition(body);
@@ -61,7 +108,7 @@ export async function POST(request: Request) {
 }
 
 async function assessDefinition(body: AssessRequest) {
-  const systemPrompt = `You are an SAT vocabulary tutor. Assess whether a student's definition captures the meaning and CONNOTATION of a word. Be encouraging but honest.
+  const systemPrompt = `You are a friendly SAT vocabulary tutor. Assess whether a student's definition captures the meaning and CONNOTATION of a word. Be encouraging but honest. Keep it casual and helpful, like a good tutor would.
 
 Respond in EXACTLY this JSON format (no markdown, no code fences):
 {"score": <1-5>, "feedback": "<1-2 sentences>"}
@@ -84,7 +131,7 @@ Student's definition: "${body.userInput}"`;
 }
 
 async function assessSentence(body: AssessRequest) {
-  const systemPrompt = `You are an SAT vocabulary tutor. Assess whether a student's sentence correctly uses a vocabulary word with proper connotation. Then provide an improved or alternative sample sentence.
+  const systemPrompt = `You are a friendly SAT vocabulary tutor. Assess whether a student's sentence correctly uses a vocabulary word with proper connotation. Then provide an improved or alternative sample sentence. Be encouraging and helpful.
 
 Respond in EXACTLY this JSON format (no markdown, no code fences):
 {"score": <1-5>, "feedback": "<1-2 sentences about their usage>", "improved": "<a polished sample sentence using the word>"}

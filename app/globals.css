@@ -1,17 +1,27 @@
 @import "tailwindcss";
 
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Inter:wght@400;500;600;700&display=swap');
+
 :root {
-  --bg: #0a0a0b;
-  --bg-card: #141416;
-  --bg-hover: #1c1c1f;
-  --border: #2a2a2e;
-  --text: #e8e8ec;
-  --text-muted: #8b8b94;
-  --accent: #6366f1;
-  --accent-hover: #818cf8;
-  --success: #22c55e;
-  --error: #ef4444;
-  --warning: #f59e0b;
+  --bg: #faf8f0;
+  --bg-card: #ffffff;
+  --bg-input: #f5f3eb;
+  --border: #e0ddd4;
+  --border-dark: #c9c4b8;
+  --text: #2d2a24;
+  --text-muted: #7a746a;
+  --text-light: #a09a8e;
+  --accent: #6aaa64;
+  --accent-dark: #538d4e;
+  --yellow: #c9b458;
+  --yellow-dark: #b59f3b;
+  --gray-tile: #787c7e;
+  --correct: #6aaa64;
+  --close: #c9b458;
+  --wrong: #dc3545;
+  --line-color: #d4e4f7;
+  --margin-color: #f4b4b4;
+  --paper-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 body {
@@ -19,6 +29,16 @@ body {
   color: var(--text);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  background-image:
+    repeating-linear-gradient(
+      transparent,
+      transparent 31px,
+      var(--line-color) 31px,
+      var(--line-color) 32px
+    );
+  background-size: 100% 32px;
+  background-position: 0 12px;
+  min-height: 100vh;
 }
 
 ::selection {
@@ -28,18 +48,130 @@ body {
 
 input, textarea {
   outline: none;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.1rem;
+}
+
+.font-hand {
+  font-family: 'Patrick Hand', cursive;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-.animate-in {
-  animation: fadeIn 0.3s ease-out forwards;
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+  100% { transform: scale(1); }
 }
 
-@keyframes pulse-border {
-  0%, 100% { border-color: var(--border); }
-  50% { border-color: var(--accent); }
+@keyframes flipIn {
+  0% { transform: rotateX(90deg); opacity: 0; }
+  100% { transform: rotateX(0deg); opacity: 1; }
 }
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+.animate-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-pop {
+  animation: pop 0.3s ease-out;
+}
+
+.animate-flip {
+  animation: flipIn 0.5s ease-out forwards;
+}
+
+.animate-shake {
+  animation: shake 0.4s ease-out;
+}
+
+/* Notebook paper card */
+.notebook-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--margin-color);
+  border-radius: 4px;
+  box-shadow: var(--paper-shadow);
+  position: relative;
+}
+
+.notebook-card::before {
+  content: '';
+  position: absolute;
+  left: 28px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--margin-color);
+  opacity: 0.5;
+}
+
+/* Score tiles (Wordle-style) */
+.score-tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  color: white;
+  animation: flipIn 0.4s ease-out forwards;
+}
+
+.score-tile.correct { background: var(--correct); }
+.score-tile.close { background: var(--close); }
+.score-tile.wrong { background: var(--wrong); }
+.score-tile.empty {
+  background: transparent;
+  border: 2px solid var(--border-dark);
+  color: var(--text-muted);
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.btn-primary:hover { background: var(--accent-dark); }
+.btn-primary:disabled { opacity: 0.4; cursor: default; }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-muted);
+  border: 2px solid var(--border-dark);
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.btn-secondary:hover {
+  border-color: var(--text);
+  color: var(--text);
+}
+.btn-secondary:disabled { opacity: 0.4; cursor: default; }
