@@ -11,7 +11,7 @@ interface Word {
 }
 
 interface WordState {
-  phase: "define" | "revealed" | "sentence" | "feedback" | "dismissed";
+  phase: "define" | "revealed" | "sentence" | "feedback" | "done";
   userDefinition?: string;
   definitionFeedback?: { score: number; feedback: string };
   userSentence?: string;
@@ -173,30 +173,15 @@ export default function Home() {
     setAssessingWord(null);
   }
 
-  function dismissWord(word: Word, userDef: string) {
-    assessDefinition(word, userDef).then(() => {
-      setWordStates((prev) => {
-        const state = prev[word.word];
-        if (state?.definitionFeedback && state.definitionFeedback.score >= 4) {
-          const next = { ...prev, [word.word]: { ...state, phase: "dismissed" as const } };
-          persistState(next);
-          return next;
-        }
-        return prev;
-      });
-    });
-  }
-
-  const activeWords = dailyWords.filter((w) => wordStates[w.word]?.phase !== "dismissed");
-  const dismissedWords = dailyWords.filter((w) => wordStates[w.word]?.phase === "dismissed");
   const completedCount = dailyWords.filter(
-    (w) => wordStates[w.word]?.phase === "feedback" || wordStates[w.word]?.phase === "dismissed"
+    (w) => wordStates[w.word]?.phase === "feedback" || wordStates[w.word]?.phase === "done"
   ).length;
+  const allDone = completedCount === dailyWords.length && dailyWords.length > 0;
 
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="font-hand text-2xl" style={{ color: "var(--text-muted)" }}>
+        <div className="font-hand text-xl" style={{ color: "var(--text-muted)" }}>
           Loading today&apos;s words...
         </div>
       </div>
@@ -207,18 +192,18 @@ export default function Home() {
     <main className="max-w-xl mx-auto px-4 py-8">
       {/* Header */}
       <header className="mb-8 text-center">
-        <h1 className="font-hand text-4xl mb-1" style={{ color: "var(--text)" }}>
-          Daily Vocab 📝
+        <h1 className="font-hand text-3xl mb-1" style={{ color: "var(--text)" }}>
+          Daily Vocab
         </h1>
         <p className="text-sm" style={{ color: "var(--text-muted)" }}>
-          {getDayKey()} &middot; {allWords.length} words in the bank
+          {getDayKey()}
         </p>
 
-        {/* Progress tiles (Wordle-style) */}
+        {/* Progress tiles */}
         <div className="flex items-center justify-center gap-2 mt-4">
           {dailyWords.map((w, i) => {
             const state = wordStates[w.word];
-            const done = state?.phase === "feedback" || state?.phase === "dismissed";
+            const done = state?.phase === "feedback" || state?.phase === "done";
             const inProgress = state?.phase === "revealed" || state?.phase === "sentence";
             return (
               <div
@@ -226,14 +211,14 @@ export default function Home() {
                 className={`score-tile ${done ? "correct" : inProgress ? "close" : "empty"}`}
                 title={w.word}
               >
-                {done ? "✓" : inProgress ? "~" : (i + 1)}
+                {done ? "\u2713" : (i + 1)}
               </div>
             );
           })}
         </div>
 
         <p className="text-xs mt-2" style={{ color: "var(--text-light)" }}>
-          {completedCount}/{dailyWords.length} complete
+          {completedCount} of {dailyWords.length}
         </p>
 
         {/* Word count selector */}
@@ -262,9 +247,41 @@ export default function Home() {
         </div>
       </header>
 
+      {/* Summary (when all done) */}
+      {allDone && (
+        <div className="notebook-card pl-10 pr-6 py-5 mb-6 animate-in text-center">
+          <h2 className="font-hand text-xl mb-3" style={{ color: "var(--accent-dark)" }}>
+            All done for today
+          </h2>
+          <div className="space-y-2 text-left">
+            {dailyWords.map((w) => {
+              const s = wordStates[w.word];
+              const defScore = s?.definitionFeedback?.score || 0;
+              const senScore = s?.sentenceFeedback?.score || 0;
+              return (
+                <div key={w.word} className="flex items-center justify-between text-sm py-1"
+                  style={{ borderBottom: "1px solid var(--border)" }}>
+                  <span className="font-semibold">{w.word}</span>
+                  <div className="flex gap-2">
+                    {defScore > 0 && <ScoreTiles score={defScore} small />}
+                    {senScore > 0 && <ScoreTiles score={senScore} small />}
+                    {s?.phase === "done" && !senScore && (
+                      <span className="text-xs" style={{ color: "var(--text-light)" }}>reviewed</span>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <p className="text-xs mt-4" style={{ color: "var(--text-light)" }}>
+            Come back tomorrow for new words.
+          </p>
+        </div>
+      )}
+
       {/* Word Cards */}
       <div className="space-y-6">
-        {activeWords.map((word, idx) => (
+        {dailyWords.map((word, idx) => (
           <WordCard
             key={word.word}
             word={word}
@@ -274,43 +291,20 @@ export default function Home() {
             inputValue={inputValues[word.word] || ""}
             onInputChange={(val) => setInputValues((p) => ({ ...p, [word.word]: val }))}
             onSubmitDefinition={(def) => assessDefinition(word, def)}
-            onDismiss={(def) => dismissWord(word, def)}
             onMoveSentence={() => updateWordState(word.word, { phase: "sentence" })}
+            onMarkDone={() => updateWordState(word.word, { phase: "done" })}
             onSubmitSentence={(s) => assessSentence(word, s)}
           />
         ))}
       </div>
 
-      {/* Dismissed section */}
-      {dismissedWords.length > 0 && (
-        <div className="mt-8 pt-4" style={{ borderTop: "2px dashed var(--border)" }}>
-          <p className="font-hand text-lg mb-2" style={{ color: "var(--text-muted)" }}>
-            Already knew these ✨
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {dismissedWords.map((w) => (
-              <span
-                key={w.word}
-                className="font-hand px-3 py-1 rounded-full text-sm"
-                style={{
-                  background: "var(--correct)",
-                  color: "white",
-                }}
-              >
-                {w.word} ✓
-              </span>
-            ))}
-          </div>
-        </div>
-      )}
-
       {/* Footer */}
       <footer className="mt-12 pt-6 text-center" style={{ borderTop: "2px dashed var(--border)" }}>
         <p className="text-xs" style={{ color: "var(--text-light)" }}>
-          New words every day at midnight EST
+          {allWords.length} words in the bank. New set every day at midnight EST.
         </p>
         <p className="text-xs mt-1" style={{ color: "var(--text-light)" }}>
-          Focus on <strong>connotation</strong>, <strong>etymology</strong>, and <strong>usage</strong>
+          Focus on connotation, etymology, and usage.
         </p>
         <a
           href="https://amadeuswoo.com"
@@ -324,14 +318,14 @@ export default function Home() {
           onMouseOver={(e) => (e.currentTarget.style.opacity = "0.8")}
           onMouseOut={(e) => (e.currentTarget.style.opacity = "1")}
         >
-          Built by Amadeus Woo &rarr;
+          Built by Amadeus Woo
         </a>
       </footer>
     </main>
   );
 }
 
-/* ─── Word Card Component ─── */
+/* Word Card */
 
 function WordCard({
   word,
@@ -341,8 +335,8 @@ function WordCard({
   inputValue,
   onInputChange,
   onSubmitDefinition,
-  onDismiss,
   onMoveSentence,
+  onMarkDone,
   onSubmitSentence,
 }: {
   word: Word;
@@ -352,23 +346,26 @@ function WordCard({
   inputValue: string;
   onInputChange: (val: string) => void;
   onSubmitDefinition: (def: string) => void;
-  onDismiss: (def: string) => void;
   onMoveSentence: () => void;
+  onMarkDone: () => void;
   onSubmitSentence: (sentence: string) => void;
 }) {
   const [sentenceInput, setSentenceInput] = useState("");
+  const [showConnotation, setShowConnotation] = useState(false);
+  const [showRoots, setShowRoots] = useState(false);
 
   const tierLabel = word.tier === 1 ? "common" : word.tier === 2 ? "advanced" : "rare";
   const tierColor = word.tier === 1 ? "var(--correct)" : word.tier === 2 ? "var(--yellow)" : "var(--wrong)";
+  const isDone = state.phase === "feedback" || state.phase === "done";
 
   return (
     <div
-      className="notebook-card animate-in pl-10 pr-6 py-5"
-      style={{ animationDelay: `${index * 0.1}s` }}
+      className={`notebook-card animate-in pl-10 pr-6 py-5 ${isDone ? "opacity-60" : ""}`}
+      style={{ animationDelay: `${index * 0.08}s` }}
     >
       {/* Word header */}
       <div className="flex items-baseline justify-between mb-3">
-        <h2 className="font-hand text-3xl font-bold" style={{ color: "var(--text)" }}>
+        <h2 className="font-hand text-2xl font-bold" style={{ color: "var(--text)" }}>
           {word.word}
         </h2>
         <span
@@ -382,8 +379,8 @@ function WordCard({
       {/* Phase: Define */}
       {state.phase === "define" && (
         <div>
-          <p className="font-hand text-lg mb-3" style={{ color: "var(--text-muted)" }}>
-            What does this word mean? Think about connotation!
+          <p className="text-sm mb-3" style={{ color: "var(--text-muted)" }}>
+            What does this word mean? Think about connotation.
           </p>
           <textarea
             value={inputValue}
@@ -404,44 +401,90 @@ function WordCard({
               }
             }}
           />
-          <div className="flex gap-2 mt-3">
+          <div className="mt-3">
             <button
               onClick={() => inputValue.trim() && onSubmitDefinition(inputValue.trim())}
               disabled={!inputValue.trim() || assessing}
               className="btn-primary"
             >
-              {assessing ? "Checking..." : "Check ✎"}
-            </button>
-            <button
-              onClick={() => inputValue.trim() && onDismiss(inputValue.trim())}
-              disabled={!inputValue.trim() || assessing}
-              className="btn-secondary"
-            >
-              I know this one 💪
+              {assessing ? "Checking..." : "Check"}
             </button>
           </div>
         </div>
       )}
 
-      {/* Phase: Revealed */}
+      {/* Phase: Revealed — progressive disclosure */}
       {state.phase === "revealed" && (
         <div className="space-y-3 animate-in">
+          {/* Score feedback */}
           {state.definitionFeedback && (
             <div className="flex items-start gap-3">
               <ScoreTiles score={state.definitionFeedback.score} />
-              <p className="font-hand text-base pt-1" style={{ color: "var(--text-muted)" }}>
+              <p className="text-sm pt-0.5" style={{ color: "var(--text-muted)" }}>
                 {state.definitionFeedback.feedback}
               </p>
             </div>
           )}
 
-          <InfoBlock emoji="📖" label="Definition" text={word.definition} />
-          <InfoBlock emoji="💡" label="Connotation" text={word.connotation} />
-          <InfoBlock emoji="🌱" label="Etymology" text={word.roots} />
+          {/* Definition (always shown) */}
+          <div className="rounded-md px-4 py-3" style={{ background: "var(--bg-input)" }}>
+            <p className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: "var(--text-muted)" }}>
+              Definition
+            </p>
+            <p className="text-sm" style={{ color: "var(--text)" }}>
+              {word.definition}
+            </p>
+          </div>
 
-          <button onClick={onMoveSentence} className="btn-primary w-full mt-2">
-            Now use it in a sentence →
+          {/* Connotation (expandable) */}
+          <button
+            onClick={() => setShowConnotation(!showConnotation)}
+            className="w-full text-left text-xs font-semibold uppercase tracking-wider px-4 py-2 rounded-md transition-colors"
+            style={{
+              background: showConnotation ? "var(--bg-input)" : "transparent",
+              color: "var(--text-muted)",
+              border: showConnotation ? "none" : "1px dashed var(--border-dark)",
+            }}
+          >
+            {showConnotation ? "Connotation" : "Show connotation"}
           </button>
+          {showConnotation && (
+            <div className="rounded-md px-4 py-3 animate-in" style={{ background: "var(--bg-input)" }}>
+              <p className="text-sm" style={{ color: "var(--text)" }}>
+                {word.connotation}
+              </p>
+            </div>
+          )}
+
+          {/* Etymology (expandable) */}
+          <button
+            onClick={() => setShowRoots(!showRoots)}
+            className="w-full text-left text-xs font-semibold uppercase tracking-wider px-4 py-2 rounded-md transition-colors"
+            style={{
+              background: showRoots ? "var(--bg-input)" : "transparent",
+              color: "var(--text-muted)",
+              border: showRoots ? "none" : "1px dashed var(--border-dark)",
+            }}
+          >
+            {showRoots ? "Etymology" : "Show etymology"}
+          </button>
+          {showRoots && (
+            <div className="rounded-md px-4 py-3 animate-in" style={{ background: "var(--bg-input)" }}>
+              <p className="text-sm" style={{ color: "var(--text)" }}>
+                {word.roots}
+              </p>
+            </div>
+          )}
+
+          {/* Action buttons */}
+          <div className="flex gap-2 pt-1">
+            <button onClick={onMoveSentence} className="btn-primary">
+              Try using it in a sentence
+            </button>
+            <button onClick={onMarkDone} className="btn-secondary">
+              Got it
+            </button>
+          </div>
         </div>
       )}
 
@@ -451,10 +494,10 @@ function WordCard({
           <p className="text-sm mb-1" style={{ color: "var(--text)" }}>
             <strong>{word.definition}</strong>
           </p>
-          <p className="font-hand text-sm italic mb-3" style={{ color: "var(--text-muted)" }}>
+          <p className="text-xs italic mb-3" style={{ color: "var(--text-muted)" }}>
             {word.connotation}
           </p>
-          <p className="font-hand text-lg mb-3" style={{ color: "var(--text-muted)" }}>
+          <p className="text-sm mb-3" style={{ color: "var(--text-muted)" }}>
             Write a sentence using <strong style={{ color: "var(--text)" }}>{word.word}</strong>:
           </p>
           <textarea
@@ -476,13 +519,18 @@ function WordCard({
               }
             }}
           />
-          <button
-            onClick={() => sentenceInput.trim() && onSubmitSentence(sentenceInput.trim())}
-            disabled={!sentenceInput.trim() || assessing}
-            className="btn-primary mt-3"
-          >
-            {assessing ? "Checking..." : "Submit ✎"}
-          </button>
+          <div className="flex gap-2 mt-3">
+            <button
+              onClick={() => sentenceInput.trim() && onSubmitSentence(sentenceInput.trim())}
+              disabled={!sentenceInput.trim() || assessing}
+              className="btn-primary"
+            >
+              {assessing ? "Checking..." : "Submit"}
+            </button>
+            <button onClick={onMarkDone} className="btn-secondary">
+              Skip
+            </button>
+          </div>
         </div>
       )}
 
@@ -490,7 +538,7 @@ function WordCard({
       {state.phase === "feedback" && (
         <div className="space-y-3 animate-in">
           <div
-            className="rounded-md px-3 py-2 font-hand text-base italic"
+            className="rounded-md px-3 py-2 text-sm italic"
             style={{ background: "var(--bg-input)", color: "var(--text-muted)" }}
           >
             &ldquo;{state.userSentence}&rdquo;
@@ -500,7 +548,7 @@ function WordCard({
             <>
               <div className="flex items-start gap-3">
                 <ScoreTiles score={state.sentenceFeedback.score} />
-                <p className="font-hand text-base pt-1" style={{ color: "var(--text-muted)" }}>
+                <p className="text-sm pt-0.5" style={{ color: "var(--text-muted)" }}>
                   {state.sentenceFeedback.feedback}
                 </p>
               </div>
@@ -516,7 +564,7 @@ function WordCard({
                   <p className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: "var(--accent)" }}>
                     Sample sentence
                   </p>
-                  <p className="font-hand text-base italic" style={{ color: "var(--text)" }}>
+                  <p className="text-sm italic" style={{ color: "var(--text)" }}>
                     &ldquo;{state.sentenceFeedback.improved}&rdquo;
                   </p>
                 </div>
@@ -525,21 +573,26 @@ function WordCard({
           )}
 
           <div className="rounded-md px-3 py-2 text-xs" style={{ background: "var(--bg-input)", color: "var(--text-light)" }}>
-            🌱 {word.roots}
+            {word.roots}
           </div>
+        </div>
+      )}
 
-          <div className="text-center font-hand text-lg animate-pop" style={{ color: "var(--correct)" }}>
-            ✓ Done!
-          </div>
+      {/* Phase: Done (skipped sentence) */}
+      {state.phase === "done" && (
+        <div className="text-sm" style={{ color: "var(--text-muted)" }}>
+          {word.definition}
         </div>
       )}
     </div>
   );
 }
 
-/* ─── Score Tiles (Wordle-style) ─── */
+/* Score Tiles */
 
-function ScoreTiles({ score }: { score: number }) {
+function ScoreTiles({ score, small }: { score: number; small?: boolean }) {
+  const size = small ? 20 : 28;
+  const fontSize = small ? "0.6rem" : "0.75rem";
   return (
     <div className="flex gap-1 shrink-0">
       {[1, 2, 3, 4, 5].map((n) => (
@@ -550,29 +603,11 @@ function ScoreTiles({ score }: { score: number }) {
               ? score >= 4 ? "correct" : score >= 2 ? "close" : "wrong"
               : "empty"
           }`}
-          style={{ width: 28, height: 28, fontSize: "0.75rem", animationDelay: `${n * 0.08}s` }}
+          style={{ width: size, height: size, fontSize, animationDelay: `${n * 0.06}s` }}
         >
-          {n <= score ? "★" : ""}
+          {n <= score ? "\u2605" : ""}
         </div>
       ))}
-    </div>
-  );
-}
-
-/* ─── Info Block ─── */
-
-function InfoBlock({ emoji, label, text }: { emoji: string; label: string; text: string }) {
-  return (
-    <div
-      className="rounded-md px-4 py-3"
-      style={{ background: "var(--bg-input)" }}
-    >
-      <p className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: "var(--text-muted)" }}>
-        {emoji} {label}
-      </p>
-      <p className="font-hand text-base" style={{ color: "var(--text)" }}>
-        {text}
-      </p>
     </div>
   );
 }
