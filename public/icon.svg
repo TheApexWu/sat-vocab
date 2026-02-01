@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bookGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="pageGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fef3c7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fde68a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="sparkle" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="240" fill="#1e1b4b" opacity="0.95"/>
+  <circle cx="256" cy="256" r="220" fill="none" stroke="#6366f1" stroke-width="2" opacity="0.3"/>
+  
+  <!-- Open book base -->
+  <g transform="translate(256, 280)">
+    <!-- Left page -->
+    <path d="M-10,10 Q-10,-80 -120,-90 L-120,50 Q-10,40 -10,10 Z" fill="url(#pageGrad)" stroke="#d4a574" stroke-width="2"/>
+    <!-- Right page -->
+    <path d="M10,10 Q10,-80 120,-90 L120,50 Q10,40 10,10 Z" fill="url(#pageGrad)" stroke="#d4a574" stroke-width="2"/>
+    <!-- Book spine -->
+    <path d="M-10,10 L0,-5 L10,10 L0,60 Z" fill="url(#bookGrad)"/>
+    <!-- Left cover -->
+    <path d="M-120,-90 L-130,-85 L-130,55 L-120,50 Z" fill="url(#bookGrad)"/>
+    <!-- Right cover -->
+    <path d="M120,-90 L130,-85 L130,55 L120,50 Z" fill="url(#bookGrad)"/>
+    <!-- Bottom covers -->
+    <path d="M-130,55 L0,65 L130,55 L120,50 Q10,40 0,60 Q-10,40 -120,50 Z" fill="#4f46e5"/>
+    
+    <!-- Text lines on left page -->
+    <line x1="-100" y1="-60" x2="-30" y2="-60" stroke="#92400e" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+    <line x1="-100" y1="-40" x2="-25" y2="-40" stroke="#92400e" stroke-width="2" stroke-linecap="round" opacity="0.25"/>
+    <line x1="-100" y1="-20" x2="-35" y2="-20" stroke="#92400e" stroke-width="2" stroke-linecap="round" opacity="0.25"/>
+    <line x1="-100" y1="0" x2="-30" y2="0" stroke="#92400e" stroke-width="2" stroke-linecap="round" opacity="0.25"/>
+    
+    <!-- "Aa" on right page -->
+    <text x="65" y="-30" font-family="Georgia, serif" font-size="52" font-weight="bold" fill="#4f46e5" text-anchor="middle" opacity="0.85">Aa</text>
+  </g>
+  
+  <!-- Sparkle top-right -->
+  <g transform="translate(350, 120)">
+    <path d="M0,-20 L5,-5 L20,0 L5,5 L0,20 L-5,5 L-20,0 L-5,-5 Z" fill="url(#sparkle)"/>
+  </g>
+  
+  <!-- Sparkle top-left smaller -->
+  <g transform="translate(155, 140)">
+    <path d="M0,-12 L3,-3 L12,0 L3,3 L0,12 L-3,3 L-12,0 L-3,-3 Z" fill="url(#sparkle)" opacity="0.7"/>
+  </g>
+  
+  <!-- Tiny sparkle -->
+  <g transform="translate(380, 180)">
+    <path d="M0,-8 L2,-2 L8,0 L2,2 L0,8 L-2,2 L-8,0 L-2,-2 Z" fill="#fbbf24" opacity="0.5"/>
+  </g>
+  
+  <!-- Brain/lightbulb hint at top -->
+  <g transform="translate(256, 135)">
+    <ellipse cx="0" cy="0" rx="28" ry="32" fill="none" stroke="#fbbf24" stroke-width="3" opacity="0.6"/>
+    <line x1="-8" y1="32" x2="8" y2="32" stroke="#fbbf24" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+    <line x1="-6" y1="38" x2="6" y2="38" stroke="#fbbf24" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+    <!-- Filament -->
+    <path d="M-5,10 Q0,0 5,10" fill="none" stroke="#fbbf24" stroke-width="2" opacity="0.8"/>
+  </g>
+</svg>
