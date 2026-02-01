@@ -1,0 +1,1605 @@
+[
+  {
+    "word": "abate",
+    "definition": "To become less intense or widespread; to reduce in degree or severity.",
+    "connotation": "Suggests a natural fading or subsiding — like a storm losing power.",
+    "roots": "From Old French 'abatre' (to beat down). Think: beating something DOWN until it weakens.",
+    "tier": 1
+  },
+  {
+    "word": "aberrant",
+    "definition": "Departing from what is normal or expected; deviating from the standard.",
+    "connotation": "Clinical and judgmental — implies something is WRONG, not just different.",
+    "roots": "Latin 'ab-' (away from) + 'errare' (to wander). Literally 'wandering away from' the norm.",
+    "tier": 2
+  },
+  {
+    "word": "abridge",
+    "definition": "To shorten or condense a written work without losing the essential meaning.",
+    "connotation": "Neutral — implies careful editing, not careless chopping.",
+    "roots": "Latin 'abbreviare' (to shorten). Same root as 'abbreviate.'",
+    "tier": 1
+  },
+  {
+    "word": "absolve",
+    "definition": "To declare free from guilt, blame, or responsibility.",
+    "connotation": "Carries moral weight — associated with forgiveness, courts, religion.",
+    "roots": "Latin 'ab-' (from) + 'solvere' (to loosen). Literally 'loosened from' blame.",
+    "tier": 1
+  },
+  {
+    "word": "abstain",
+    "definition": "To voluntarily choose not to do or have something, especially something enjoyable.",
+    "connotation": "Implies self-discipline and deliberate restraint.",
+    "roots": "Latin 'abs-' (from) + 'tenere' (to hold). Holding yourself BACK from something.",
+    "tier": 1
+  },
+  {
+    "word": "acumen",
+    "definition": "The ability to make quick, accurate judgments; keen insight, especially in business or practical matters.",
+    "connotation": "Always positive — implies sharpness and experience, not just raw intelligence.",
+    "roots": "Latin 'acuere' (to sharpen). Same root as 'acute.' A sharp mind.",
+    "tier": 2
+  },
+  {
+    "word": "admonish",
+    "definition": "To warn or reprimand someone firmly but not harshly.",
+    "connotation": "Gentler than 'scold' or 'rebuke' — carries a tone of caring correction.",
+    "roots": "Latin 'ad-' (to) + 'monere' (to warn). Same root as 'monitor' — someone who watches and warns.",
+    "tier": 1
+  },
+  {
+    "word": "adulterate",
+    "definition": "To make something poorer in quality by adding inferior or contaminating substances.",
+    "connotation": "Always negative — implies corruption and deception.",
+    "roots": "Latin 'adulterare' (to corrupt). Think: the purity has been violated.",
+    "tier": 2
+  },
+  {
+    "word": "advocate",
+    "definition": "To publicly support or recommend a cause, policy, or person.",
+    "connotation": "Active and vocal — stronger than 'support,' implies you're putting yourself out there.",
+    "roots": "Latin 'ad-' (to) + 'vocare' (to call). Literally 'calling to' others on someone's behalf.",
+    "tier": 1
+  },
+  {
+    "word": "aesthetic",
+    "definition": "Concerned with beauty or the appreciation of beauty; a set of principles about what is beautiful.",
+    "connotation": "Sophisticated — implies intentional taste, not just 'pretty.'",
+    "roots": "Greek 'aisthesis' (perception, sensation). Originally about ALL senses, narrowed to beauty.",
+    "tier": 1
+  },
+  {
+    "word": "alacrity",
+    "definition": "Eager willingness and cheerful readiness to do something.",
+    "connotation": "Implies enthusiasm, not just speed. Doing something HAPPILY, not grudgingly.",
+    "roots": "Latin 'alacer' (lively, eager). The -ity suffix makes it a state of being lively.",
+    "tier": 2
+  },
+  {
+    "word": "alleviate",
+    "definition": "To make suffering, a problem, or a burden less severe without removing it entirely.",
+    "connotation": "Partial relief — implies the problem still exists, just less painful.",
+    "roots": "Latin 'ad-' (to) + 'levis' (light). Making something LIGHTER to bear.",
+    "tier": 1
+  },
+  {
+    "word": "ambiguous",
+    "definition": "Open to more than one interpretation; having a double meaning or unclear intent.",
+    "connotation": "Often negative on the SAT — implies confusion or lack of clarity.",
+    "roots": "Latin 'ambi-' (both) + 'agere' (to drive). Being driven in TWO directions at once.",
+    "tier": 1
+  },
+  {
+    "word": "ambivalent",
+    "definition": "Having mixed or contradictory feelings about something or someone.",
+    "connotation": "Different from 'indifferent' — you CARE, but you're torn. Indifferent = don't care at all.",
+    "roots": "Latin 'ambi-' (both) + 'valere' (to be strong). Strong feelings pulling BOTH ways.",
+    "tier": 1
+  },
+  {
+    "word": "ameliorate",
+    "definition": "To make something bad or unsatisfactory better; to improve conditions.",
+    "connotation": "Formal and deliberate — implies an active effort to fix, not accidental improvement.",
+    "roots": "Latin 'melior' (better). Direct: to make BETTER.",
+    "tier": 2
+  },
+  {
+    "word": "anachronism",
+    "definition": "Something that belongs to a different time period; a thing misplaced in time.",
+    "connotation": "Can be charming (a vintage typewriter) or critical (outdated thinking).",
+    "roots": "Greek 'ana-' (against) + 'chronos' (time). Literally 'against time.'",
+    "tier": 2
+  },
+  {
+    "word": "anomaly",
+    "definition": "Something that deviates from what is standard, normal, or expected.",
+    "connotation": "More neutral than 'aberrant' — it's unusual, but not necessarily wrong.",
+    "roots": "Greek 'an-' (not) + 'homalos' (even, regular). Something NOT regular.",
+    "tier": 1
+  },
+  {
+    "word": "antipathy",
+    "definition": "A deep-seated feeling of dislike or aversion.",
+    "connotation": "Stronger than 'dislike,' more instinctive — you feel it in your gut.",
+    "roots": "Greek 'anti-' (against) + 'pathos' (feeling). Feeling AGAINST something. Opposite of 'sympathy.'",
+    "tier": 2
+  },
+  {
+    "word": "apathy",
+    "definition": "Lack of interest, enthusiasm, or concern; emotional indifference.",
+    "connotation": "Always negative — implies a failure to care when you should.",
+    "roots": "Greek 'a-' (without) + 'pathos' (feeling). Literally WITHOUT feeling.",
+    "tier": 1
+  },
+  {
+    "word": "appease",
+    "definition": "To calm or satisfy someone by giving in to their demands; to pacify.",
+    "connotation": "Often negative — implies weakness, giving in to avoid conflict (think: appeasing a bully).",
+    "roots": "Old French 'apaisier' (to bring to peace). Latin 'pax' (peace). Buying peace at a cost.",
+    "tier": 1
+  },
+  {
+    "word": "arbitrary",
+    "definition": "Based on random choice or personal whim rather than any reason or system.",
+    "connotation": "Negative — implies unfairness and lack of justification.",
+    "roots": "Latin 'arbitrarius' (depending on the will). An 'arbiter' decides — but arbitrary means deciding WITHOUT good reason.",
+    "tier": 1
+  },
+  {
+    "word": "arcane",
+    "definition": "Understood by few; mysterious, secret, requiring specialized knowledge.",
+    "connotation": "Implies exclusivity — knowledge that's hidden or accessible only to insiders.",
+    "roots": "Latin 'arcanus' (secret), from 'arca' (chest, box). Knowledge locked in a chest.",
+    "tier": 2
+  },
+  {
+    "word": "arduous",
+    "definition": "Involving or requiring strenuous effort; extremely difficult and tiring.",
+    "connotation": "Implies a long, exhausting struggle — not a quick burst of difficulty.",
+    "roots": "Latin 'arduus' (steep, difficult). Think: climbing a steep hill.",
+    "tier": 1
+  },
+  {
+    "word": "articulate",
+    "definition": "Able to express ideas clearly and effectively in speech or writing.",
+    "connotation": "High praise — implies not just smart, but able to COMMUNICATE that intelligence.",
+    "roots": "Latin 'articulare' (to divide into joints). Ideas are JOINTED — connected clearly, piece by piece.",
+    "tier": 1
+  },
+  {
+    "word": "ascetic",
+    "definition": "Characterized by severe self-discipline and abstention from indulgence, often for spiritual reasons.",
+    "connotation": "Can be admiring (disciplined monk) or critical (unnecessarily harsh self-denial).",
+    "roots": "Greek 'askesis' (exercise, training). Originally meant athletic training — evolved to spiritual training.",
+    "tier": 3
+  },
+  {
+    "word": "assiduous",
+    "definition": "Showing great care, attention, and persistent effort.",
+    "connotation": "Strongly positive — implies dedication beyond mere diligence.",
+    "roots": "Latin 'assidere' (to sit beside). Someone who SITS BESIDE a task until it's done.",
+    "tier": 2
+  },
+  {
+    "word": "assuage",
+    "definition": "To make an unpleasant feeling less intense; to soothe or relieve.",
+    "connotation": "Gentle — implies comfort and care, not just problem-solving.",
+    "roots": "Latin 'ad-' (to) + 'suavis' (sweet). Making something SWEET, soothing the bitterness.",
+    "tier": 2
+  },
+  {
+    "word": "audacious",
+    "definition": "Showing a willingness to take surprisingly bold risks; fearlessly daring.",
+    "connotation": "Can be positive (brave innovator) or negative (recklessly bold). Context decides.",
+    "roots": "Latin 'audax' (bold), from 'audere' (to dare). Same root as 'audacity.'",
+    "tier": 1
+  },
+  {
+    "word": "austere",
+    "definition": "Severe or strict in manner or attitude; having no comforts or luxuries.",
+    "connotation": "Cold — implies harshness, but can also suggest dignified simplicity.",
+    "roots": "Greek 'austeros' (harsh, rough, bitter). Originally described dry, bitter tastes.",
+    "tier": 2
+  },
+  {
+    "word": "avarice",
+    "definition": "Extreme greed for wealth or material gain.",
+    "connotation": "Strongly negative — one of the seven deadly sins. Implies moral corruption.",
+    "roots": "Latin 'avarus' (greedy), from 'avere' (to crave). Raw craving.",
+    "tier": 2
+  },
+  {
+    "word": "banal",
+    "definition": "So lacking in originality as to be obvious and boring; unimaginative.",
+    "connotation": "Dismissive and cutting — implies intellectual laziness.",
+    "roots": "Old French 'ban' (a proclamation open to all). Something so common it belongs to EVERYONE — therefore worthless.",
+    "tier": 2
+  },
+  {
+    "word": "belligerent",
+    "definition": "Hostile and aggressive; eager to fight.",
+    "connotation": "Always negative in casual use — implies unreasonable aggression.",
+    "roots": "Latin 'bellum' (war) + 'gerere' (to wage). Literally 'waging war.'",
+    "tier": 1
+  },
+  {
+    "word": "benevolent",
+    "definition": "Well-meaning and kindly; showing goodwill.",
+    "connotation": "Warm and generous — implies genuine kindness, not just politeness.",
+    "roots": "Latin 'bene-' (well) + 'volens' (wishing). Literally 'wishing well' for others.",
+    "tier": 1
+  },
+  {
+    "word": "bolster",
+    "definition": "To support, strengthen, or reinforce something.",
+    "connotation": "Implies propping up something that's weak — adding support where it's needed.",
+    "roots": "Old English 'bolster' (a long pillow). Literally a cushion that SUPPORTS.",
+    "tier": 1
+  },
+  {
+    "word": "brazen",
+    "definition": "Bold and shameless; showing no embarrassment about one's behavior.",
+    "connotation": "Negative — implies shocking audacity, crossing social boundaries.",
+    "roots": "Old English 'bræsen' (made of brass). Brass-faced = thick-skinned, shameless.",
+    "tier": 2
+  },
+  {
+    "word": "brevity",
+    "definition": "Concise and exact use of words; shortness of time or duration.",
+    "connotation": "Usually positive — 'brevity is the soul of wit' (Shakespeare).",
+    "roots": "Latin 'brevis' (short). Same root as 'brief' and 'abbreviate.'",
+    "tier": 1
+  },
+  {
+    "word": "burgeon",
+    "definition": "To grow or increase rapidly; to flourish.",
+    "connotation": "Organic and positive — implies healthy, natural expansion.",
+    "roots": "Old French 'borjon' (a bud). Like a plant BUDDING — new growth emerging.",
+    "tier": 2
+  },
+  {
+    "word": "cacophony",
+    "definition": "A harsh, discordant mixture of sounds.",
+    "connotation": "Always unpleasant — noise without harmony.",
+    "roots": "Greek 'kakos' (bad) + 'phone' (sound). Literally 'bad sound.' Opposite of 'euphony.'",
+    "tier": 2
+  },
+  {
+    "word": "candor",
+    "definition": "The quality of being open, honest, and sincere in speech.",
+    "connotation": "Positive — implies refreshing honesty, but can be uncomfortable for the listener.",
+    "roots": "Latin 'candidus' (white, pure). Same root as 'candidate' (Roman candidates wore white togas).",
+    "tier": 1
+  },
+  {
+    "word": "capricious",
+    "definition": "Given to sudden and unaccountable changes of mood or behavior; unpredictable.",
+    "connotation": "Negative — implies unreliability and whimsy at others' expense.",
+    "roots": "Italian 'capriccio' (sudden start), possibly from 'capra' (goat). Goats jump around unpredictably.",
+    "tier": 2
+  },
+  {
+    "word": "caustic",
+    "definition": "Able to burn or corrode organic tissue; sarcastic in a scathing, bitter way.",
+    "connotation": "Harsh — when applied to speech, implies words that BURN and wound.",
+    "roots": "Greek 'kaustikos' (capable of burning), from 'kaiein' (to burn). Speech that leaves marks.",
+    "tier": 2
+  },
+  {
+    "word": "censure",
+    "definition": "To express severe disapproval of someone or something, especially in a formal statement.",
+    "connotation": "Official and serious — stronger than criticism, often institutional.",
+    "roots": "Latin 'censura' (judgment). A Roman 'censor' judged public morality.",
+    "tier": 2
+  },
+  {
+    "word": "circumscribe",
+    "definition": "To restrict or limit something within defined boundaries.",
+    "connotation": "Implies constraint — drawing a line around what's permitted.",
+    "roots": "Latin 'circum-' (around) + 'scribere' (to write/draw). Literally drawing a circle AROUND something.",
+    "tier": 2
+  },
+  {
+    "word": "coalesce",
+    "definition": "To come together and form one mass or whole; to merge or unite.",
+    "connotation": "Organic — implies a natural coming-together, not forced combination.",
+    "roots": "Latin 'co-' (together) + 'alescere' (to grow). Growing TOGETHER into one.",
+    "tier": 2
+  },
+  {
+    "word": "cogent",
+    "definition": "Clear, logical, and convincing in argument or reasoning.",
+    "connotation": "High praise for an argument — implies it's not just logical but PERSUASIVE.",
+    "roots": "Latin 'cogere' (to compel). A cogent argument COMPELS you to agree.",
+    "tier": 2
+  },
+  {
+    "word": "complacent",
+    "definition": "Showing smug or uncritical satisfaction with oneself or one's achievements.",
+    "connotation": "Always negative on the SAT — implies dangerous self-satisfaction, ignoring real problems.",
+    "roots": "Latin 'com-' (with) + 'placere' (to please). Pleased WITH yourself — too pleased.",
+    "tier": 1
+  },
+  {
+    "word": "concede",
+    "definition": "To admit that something is true after first resisting; to surrender or yield.",
+    "connotation": "Implies reluctance — you didn't WANT to admit it, but the evidence forced you.",
+    "roots": "Latin 'con-' (with) + 'cedere' (to yield, go). Yielding ground.",
+    "tier": 1
+  },
+  {
+    "word": "congenial",
+    "definition": "Pleasant and agreeable because suited to one's taste or nature.",
+    "connotation": "Warm — implies a natural fit, not forced friendliness.",
+    "roots": "Latin 'con-' (with) + 'genialis' (of birth). Born WITH the same spirit — a natural match.",
+    "tier": 1
+  },
+  {
+    "word": "conjecture",
+    "definition": "An opinion or conclusion formed on the basis of incomplete information; a guess.",
+    "connotation": "Implies uncertainty — educated guessing, not proven fact.",
+    "roots": "Latin 'con-' (together) + 'jacere' (to throw). Throwing ideas TOGETHER to form a guess.",
+    "tier": 2
+  },
+  {
+    "word": "conspicuous",
+    "definition": "Standing out so as to be clearly visible; attracting attention.",
+    "connotation": "Can be neutral or negative — 'conspicuous consumption' = showing off wealth.",
+    "roots": "Latin 'con-' (thoroughly) + 'specere' (to look). Something you can't help but LOOK at.",
+    "tier": 1
+  },
+  {
+    "word": "contentious",
+    "definition": "Causing or likely to cause disagreement or argument; involving heated debate.",
+    "connotation": "Charged — implies people WILL fight about this topic.",
+    "roots": "Latin 'contentiosus' (quarrelsome), from 'contendere' (to strive). A space of striving and conflict.",
+    "tier": 1
+  },
+  {
+    "word": "convoluted",
+    "definition": "Extremely complex and difficult to follow; intricate to the point of confusion.",
+    "connotation": "Negative — implies unnecessary complexity, bad communication.",
+    "roots": "Latin 'con-' (together) + 'volutus' (rolled). Rolled up TOGETHER — tangled like a ball of yarn.",
+    "tier": 1
+  },
+  {
+    "word": "corroborate",
+    "definition": "To confirm or support a statement, theory, or finding with additional evidence.",
+    "connotation": "Forensic — implies independent verification, not just agreement.",
+    "roots": "Latin 'con-' (together) + 'roborare' (to strengthen). Making something STRONG through confirmation.",
+    "tier": 1
+  },
+  {
+    "word": "credulous",
+    "definition": "Having a tendency to believe things too readily; gullible.",
+    "connotation": "Negative — implies naivety and lack of critical thinking. NOT the same as 'credible.'",
+    "roots": "Latin 'credulus' (easily believing), from 'credere' (to believe). Too willing to BELIEVE.",
+    "tier": 2
+  },
+  {
+    "word": "cursory",
+    "definition": "Hasty and therefore not thorough or detailed; superficial.",
+    "connotation": "Negative — implies carelessness, not doing proper due diligence.",
+    "roots": "Latin 'cursorius' (of running), from 'currere' (to run). Running THROUGH something too fast.",
+    "tier": 2
+  },
+  {
+    "word": "cynical",
+    "definition": "Believing that people are motivated purely by self-interest; distrustful of sincerity.",
+    "connotation": "Negative — implies jaded bitterness and inability to see good in others.",
+    "roots": "Greek 'kynikos' (dog-like). The Cynic philosophers lived like dogs — rejecting social conventions.",
+    "tier": 1
+  },
+  {
+    "word": "dearth",
+    "definition": "A scarcity or lack of something.",
+    "connotation": "Formal — implies a serious shortage, not just 'we're running low.'",
+    "roots": "Middle English 'derthe' (costliness, scarcity). When something is scarce, it becomes DEAR (expensive).",
+    "tier": 2
+  },
+  {
+    "word": "debilitate",
+    "definition": "To make someone or something weak or infirm; to severely impair strength.",
+    "connotation": "Serious — implies lasting damage, not temporary weakness.",
+    "roots": "Latin 'de-' (away) + 'habilis' (able). Taking ABILITY away.",
+    "tier": 2
+  },
+  {
+    "word": "decorum",
+    "definition": "Behavior in keeping with good taste and propriety; dignified correctness.",
+    "connotation": "Formal and slightly stuffy — implies following social rules about what's 'proper.'",
+    "roots": "Latin 'decorus' (fitting, proper). What FITS the occasion.",
+    "tier": 2
+  },
+  {
+    "word": "deference",
+    "definition": "Humble submission and respect shown to someone; yielding to their judgment.",
+    "connotation": "Implies hierarchy — you defer to someone you consider superior in status or expertise.",
+    "roots": "Latin 'de-' (away) + 'ferre' (to carry). Carrying your own opinion AWAY in favor of theirs.",
+    "tier": 2
+  },
+  {
+    "word": "deliberate",
+    "definition": "Done consciously and intentionally; or to think about something carefully before deciding.",
+    "connotation": "As adjective: purposeful, not accidental. As verb: slow and thoughtful process.",
+    "roots": "Latin 'deliberare' (to weigh well), from 'libra' (scale). Weighing options on a SCALE.",
+    "tier": 1
+  },
+  {
+    "word": "delineate",
+    "definition": "To describe or portray something precisely; to indicate exact boundaries.",
+    "connotation": "Precise — implies drawing clear lines, leaving no ambiguity.",
+    "roots": "Latin 'de-' (completely) + 'lineare' (to draw a line). Drawing a complete LINE around something.",
+    "tier": 2
+  },
+  {
+    "word": "denounce",
+    "definition": "To publicly declare something to be wrong or evil; to condemn openly.",
+    "connotation": "Public and forceful — implies moral outrage, not just disagreement.",
+    "roots": "Latin 'de-' (down) + 'nuntiare' (to announce). Announcing someone DOWN — tearing them down publicly.",
+    "tier": 1
+  },
+  {
+    "word": "deplete",
+    "definition": "To use up the supply or resources of something; to drastically reduce.",
+    "connotation": "Implies exhaustion — not just using, but using UP, leaving nothing.",
+    "roots": "Latin 'de-' (away) + 'plere' (to fill). Un-filling something — draining it empty.",
+    "tier": 1
+  },
+  {
+    "word": "deride",
+    "definition": "To express contempt for; to ridicule or mock.",
+    "connotation": "Cruel — implies laughing AT someone, not with them.",
+    "roots": "Latin 'de-' (down) + 'ridere' (to laugh). Laughing someone DOWN.",
+    "tier": 2
+  },
+  {
+    "word": "derivative",
+    "definition": "Imitative of the work of another person; not original.",
+    "connotation": "Dismissive — implies lack of creativity, copying without adding value.",
+    "roots": "Latin 'derivare' (to draw off). Drawing FROM someone else's work — a copy of the source.",
+    "tier": 1
+  },
+  {
+    "word": "desiccate",
+    "definition": "To remove moisture from; to dry out completely.",
+    "connotation": "Can be literal (desiccated coconut) or figurative (a desiccated, lifeless argument).",
+    "roots": "Latin 'de-' (completely) + 'siccare' (to dry). Same root as 'siccative.' Dried OUT completely.",
+    "tier": 3
+  },
+  {
+    "word": "desultory",
+    "definition": "Lacking a plan, purpose, or enthusiasm; moving from one thing to another aimlessly.",
+    "connotation": "Negative — implies unfocused, half-hearted effort.",
+    "roots": "Latin 'desultor' (a circus rider who jumps between horses). Jumping from horse to horse — never committing.",
+    "tier": 3
+  },
+  {
+    "word": "didactic",
+    "definition": "Intended to teach, especially with a moral lesson; often used negatively to mean overly instructive.",
+    "connotation": "Neutral in academic writing, but often negative in reviews — 'preachy.'",
+    "roots": "Greek 'didaktikos' (apt at teaching), from 'didaskein' (to teach). Teaching mode — for better or worse.",
+    "tier": 2
+  },
+  {
+    "word": "diffident",
+    "definition": "Modest or shy because of a lack of self-confidence.",
+    "connotation": "Sympathetic — implies genuine self-doubt, not false modesty.",
+    "roots": "Latin 'dis-' (not) + 'fidere' (to trust). NOT trusting yourself.",
+    "tier": 2
+  },
+  {
+    "word": "digress",
+    "definition": "To leave the main subject temporarily in speech or writing; to wander off-topic.",
+    "connotation": "Can be charming (entertaining tangent) or annoying (losing the point).",
+    "roots": "Latin 'di-' (apart) + 'gradi' (to walk). Walking APART from the main path.",
+    "tier": 1
+  },
+  {
+    "word": "diligent",
+    "definition": "Having or showing care and conscientiousness in one's work or duties.",
+    "connotation": "Positive — implies steady, careful effort over time.",
+    "roots": "Latin 'diligere' (to value highly, take delight in). Working hard because you VALUE the work.",
+    "tier": 1
+  },
+  {
+    "word": "diminish",
+    "definition": "To make or become less; to reduce in size, importance, or value.",
+    "connotation": "Can be factual (diminishing returns) or hostile (diminishing someone's achievements).",
+    "roots": "Latin 'diminuere' (to break into small pieces). Breaking something into SMALLER pieces.",
+    "tier": 1
+  },
+  {
+    "word": "discern",
+    "definition": "To perceive or recognize something, especially with difficulty or effort; to distinguish.",
+    "connotation": "Implies skill — seeing what others miss, noticing subtle differences.",
+    "roots": "Latin 'dis-' (apart) + 'cernere' (to separate). Separating things APART to see clearly.",
+    "tier": 1
+  },
+  {
+    "word": "disparage",
+    "definition": "To regard or represent as being of little worth; to belittle.",
+    "connotation": "Negative — implies unfair devaluation of someone or something.",
+    "roots": "Old French 'desparagier' (to marry below one's class). Treating something as BENEATH you.",
+    "tier": 2
+  },
+  {
+    "word": "dispassionate",
+    "definition": "Not influenced by strong emotion; able to be rational and impartial.",
+    "connotation": "Positive in analytical contexts — implies fairness and objectivity.",
+    "roots": "Latin 'dis-' (without) + 'passio' (suffering/emotion). WITHOUT emotional interference.",
+    "tier": 2
+  },
+  {
+    "word": "disseminate",
+    "definition": "To spread information, knowledge, or ideas widely.",
+    "connotation": "Neutral to positive — implies intentional sharing, like planting seeds.",
+    "roots": "Latin 'dis-' (widely) + 'seminare' (to sow seeds). Scattering SEEDS of knowledge.",
+    "tier": 2
+  },
+  {
+    "word": "dither",
+    "definition": "To be indecisive; to hesitate and waver before making a decision.",
+    "connotation": "Negative — implies wasting time through inability to commit.",
+    "roots": "Middle English, variant of 'didder' (to tremble). Trembling with indecision.",
+    "tier": 2
+  },
+  {
+    "word": "dogmatic",
+    "definition": "Inclined to lay down principles as undeniably true; asserting opinions as if they were facts.",
+    "connotation": "Negative — implies closed-mindedness and refusal to consider other views.",
+    "roots": "Greek 'dogma' (opinion, decree). Treating personal opinions as official DECREES.",
+    "tier": 2
+  },
+  {
+    "word": "ebullient",
+    "definition": "Cheerful and full of energy; enthusiastically excited.",
+    "connotation": "Intensely positive — implies overflowing, infectious enthusiasm.",
+    "roots": "Latin 'e-' (out) + 'bullire' (to bubble). Literally BUBBLING OVER with energy.",
+    "tier": 2
+  },
+  {
+    "word": "efficacy",
+    "definition": "The ability to produce a desired or intended result; effectiveness.",
+    "connotation": "Clinical and precise — used in medicine, policy, science. 'Does it actually WORK?'",
+    "roots": "Latin 'efficax' (effective), from 'efficere' (to accomplish). The power to accomplish.",
+    "tier": 1
+  },
+  {
+    "word": "egregious",
+    "definition": "Outstandingly bad; shockingly terrible.",
+    "connotation": "Strongly negative — implies the badness is so extreme it stands out.",
+    "roots": "Latin 'e-' (out of) + 'grex' (flock). Standing OUT from the flock — originally meant outstandingly GOOD, now flipped to outstandingly BAD.",
+    "tier": 2
+  },
+  {
+    "word": "elicit",
+    "definition": "To draw out a response, answer, or fact from someone.",
+    "connotation": "Implies skill — you have to know how to extract the information.",
+    "roots": "Latin 'e-' (out) + 'lacere' (to entice). Enticing something OUT of hiding. NOT 'illicit' (illegal)!",
+    "tier": 1
+  },
+  {
+    "word": "eloquent",
+    "definition": "Fluent and persuasive in speaking or writing.",
+    "connotation": "High praise — implies beauty and power in expression.",
+    "roots": "Latin 'e-' (out) + 'loqui' (to speak). Speaking OUT powerfully. Same root as 'loquacious.'",
+    "tier": 1
+  },
+  {
+    "word": "elucidate",
+    "definition": "To make something clear; to explain or clarify.",
+    "connotation": "Formal — implies bringing light to something that was confusing.",
+    "roots": "Latin 'e-' (out) + 'lucidus' (clear, bright). Bringing something OUT into the LIGHT.",
+    "tier": 2
+  },
+  {
+    "word": "empirical",
+    "definition": "Based on observation or experience rather than theory or pure logic.",
+    "connotation": "Scientific — implies evidence-based, tested, verified by real-world data.",
+    "roots": "Greek 'empeirikos' (experienced). Knowledge from EXPERIENCE, not just thinking.",
+    "tier": 1
+  },
+  {
+    "word": "emulate",
+    "definition": "To match or surpass someone or something, typically by imitation with the intent to equal.",
+    "connotation": "Positive — unlike 'imitate' (copying), 'emulate' implies aspiring to MATCH or EXCEED.",
+    "roots": "Latin 'aemulus' (trying to equal). Rivaling someone through effort.",
+    "tier": 1
+  },
+  {
+    "word": "enervate",
+    "definition": "To cause someone to feel drained of energy or vitality; to weaken.",
+    "connotation": "TRAP WORD: sounds like 'energize' but means the OPPOSITE. Draining, not charging.",
+    "roots": "Latin 'e-' (out of) + 'nervus' (sinew, nerve). Taking the NERVE out of someone.",
+    "tier": 2
+  },
+  {
+    "word": "engender",
+    "definition": "To cause or give rise to a feeling, situation, or condition.",
+    "connotation": "Formal — implies creation of something abstract (trust, hostility, debate).",
+    "roots": "Latin 'in-' (in) + 'generare' (to beget). Generating something into existence.",
+    "tier": 2
+  },
+  {
+    "word": "enigmatic",
+    "definition": "Difficult to interpret or understand; mysterious and puzzling.",
+    "connotation": "Often admiring — implies intriguing complexity, not just confusion.",
+    "roots": "Greek 'ainigma' (riddle). Someone or something that IS a riddle.",
+    "tier": 1
+  },
+  {
+    "word": "ephemeral",
+    "definition": "Lasting for a very short time; fleeting.",
+    "connotation": "Bittersweet — beautiful but temporary. Often used for nature, youth, trends.",
+    "roots": "Greek 'epi-' (on) + 'hemera' (day). Lasting only a DAY.",
+    "tier": 1
+  },
+  {
+    "word": "equivocal",
+    "definition": "Open to more than one interpretation; ambiguous, often deliberately so.",
+    "connotation": "Suspicious — implies someone might be INTENTIONALLY vague to avoid commitment.",
+    "roots": "Latin 'aequi-' (equal) + 'vocare' (to call). Calling with EQUAL voice in two directions — saying two things at once.",
+    "tier": 2
+  },
+  {
+    "word": "erratic",
+    "definition": "Not even or regular in pattern or movement; unpredictable.",
+    "connotation": "Negative — implies unreliability and concerning instability.",
+    "roots": "Latin 'errare' (to wander). Wandering without direction.",
+    "tier": 1
+  },
+  {
+    "word": "erudite",
+    "definition": "Having or showing great knowledge or learning; scholarly.",
+    "connotation": "Impressive — implies deep, wide-ranging knowledge gained through study.",
+    "roots": "Latin 'e-' (out of) + 'rudis' (rough, untrained). Polished OUT of roughness through learning.",
+    "tier": 2
+  },
+  {
+    "word": "eschew",
+    "definition": "To deliberately avoid or keep away from something.",
+    "connotation": "Formal and deliberate — implies a principled avoidance, not casual disinterest.",
+    "roots": "Old French 'eschiver' (to shun). Germanic origin related to 'shy.' Shying away ON PURPOSE.",
+    "tier": 2
+  },
+  {
+    "word": "exacerbate",
+    "definition": "To make a problem, bad situation, or negative feeling worse.",
+    "connotation": "Always negative — implies aggravating an already bad situation.",
+    "roots": "Latin 'ex-' (thoroughly) + 'acerbus' (harsh, bitter). Making something thoroughly MORE bitter.",
+    "tier": 1
+  },
+  {
+    "word": "exalt",
+    "definition": "To hold something in very high regard; to praise enthusiastically; to elevate in rank or status.",
+    "connotation": "Implies elevation — lifting something UP, often to an extreme degree.",
+    "roots": "Latin 'ex-' (out, up) + 'altus' (high). Raising something UP high.",
+    "tier": 1
+  },
+  {
+    "word": "exonerate",
+    "definition": "To absolve someone from blame; to officially declare not guilty.",
+    "connotation": "Legal and definitive — implies clearing someone's name completely.",
+    "roots": "Latin 'ex-' (from) + 'onus' (burden). Removing the BURDEN of guilt.",
+    "tier": 2
+  },
+  {
+    "word": "expedient",
+    "definition": "Convenient and practical, though possibly improper or immoral; useful for achieving a particular end.",
+    "connotation": "Morally ambiguous — implies choosing what WORKS over what's RIGHT.",
+    "roots": "Latin 'expedire' (to free the feet). Freeing your feet to move quickly — taking the shortcut.",
+    "tier": 2
+  },
+  {
+    "word": "facilitate",
+    "definition": "To make an action or process easier or more achievable.",
+    "connotation": "Neutral and professional — implies enabling, not doing the work yourself.",
+    "roots": "Latin 'facilis' (easy). Making something EASY.",
+    "tier": 1
+  },
+  {
+    "word": "fastidious",
+    "definition": "Very attentive to accuracy and detail; excessively particular about cleanliness.",
+    "connotation": "Can be positive (meticulous craftsman) or negative (annoyingly picky). Depends on context.",
+    "roots": "Latin 'fastidium' (loathing, disgust). Originally: disgusted by imperfection.",
+    "tier": 2
+  },
+  {
+    "word": "fervent",
+    "definition": "Having or displaying passionate intensity of feeling.",
+    "connotation": "Positive — implies genuine, deep passion, not just casual interest.",
+    "roots": "Latin 'fervere' (to boil). Feelings that BOIL inside you.",
+    "tier": 1
+  },
+  {
+    "word": "fortuitous",
+    "definition": "Happening by accident or chance rather than design; often implies lucky coincidence.",
+    "connotation": "CAREFUL: technically means 'by chance' (could be good OR bad), but commonly used to mean 'lucky.'",
+    "roots": "Latin 'fortuitus' (accidental), from 'fors' (chance). Same root as 'fortune.'",
+    "tier": 2
+  },
+  {
+    "word": "frugal",
+    "definition": "Sparing or economical with money or resources; not wasteful.",
+    "connotation": "Positive — implies wisdom and discipline. Different from 'cheap' (which implies stinginess).",
+    "roots": "Latin 'frugalis' (virtuous, thrifty), from 'frux' (fruit). Using your FRUITS wisely.",
+    "tier": 1
+  },
+  {
+    "word": "futile",
+    "definition": "Incapable of producing any useful result; pointless.",
+    "connotation": "Bleak — implies complete hopelessness of effort.",
+    "roots": "Latin 'futilis' (leaky, unreliable). Like pouring water into a LEAKY vessel — effort wasted.",
+    "tier": 1
+  },
+  {
+    "word": "galvanize",
+    "definition": "To shock or excite someone into taking action.",
+    "connotation": "Powerful — implies sudden, electric motivation after inertia.",
+    "roots": "Named after Luigi Galvani, who made frog legs twitch with electricity. ELECTRICAL shock into action.",
+    "tier": 2
+  },
+  {
+    "word": "garrulous",
+    "definition": "Excessively talkative, especially about trivial things.",
+    "connotation": "Negative — implies annoying, pointless chatter. Stronger than 'chatty.'",
+    "roots": "Latin 'garrire' (to chatter). Pure chatter — noise without substance.",
+    "tier": 2
+  },
+  {
+    "word": "gratuitous",
+    "definition": "Uncalled for; given or done free of charge; lacking good reason.",
+    "connotation": "Usually negative — 'gratuitous violence' means violence with NO purpose or justification.",
+    "roots": "Latin 'gratuitus' (free, spontaneous). Something given FREELY — but often implies it wasn't wanted.",
+    "tier": 2
+  },
+  {
+    "word": "gregarious",
+    "definition": "Fond of company; sociable and outgoing.",
+    "connotation": "Positive — implies warm, natural sociability.",
+    "roots": "Latin 'grex' (flock). Someone who naturally gathers in a FLOCK — a social animal.",
+    "tier": 1
+  },
+  {
+    "word": "hackneyed",
+    "definition": "Lacking significance through having been overused; unoriginal and trite.",
+    "connotation": "Dismissive — implies lazy thinking, recycled clichés.",
+    "roots": "From Hackney (London borough) where horses were rented. A hackney horse = overworked, worn out.",
+    "tier": 2
+  },
+  {
+    "word": "hamper",
+    "definition": "To hinder or impede the movement or progress of.",
+    "connotation": "Implies obstruction — something getting in the way of progress.",
+    "roots": "Middle English 'hampren' (to surround, imprison). Being SURROUNDED by obstacles.",
+    "tier": 1
+  },
+  {
+    "word": "haughty",
+    "definition": "Arrogantly superior and disdainful; looking down on others.",
+    "connotation": "Strongly negative — implies contempt and unearned superiority.",
+    "roots": "Old French 'haut' (high). Someone who thinks they're HIGH above everyone else.",
+    "tier": 1
+  },
+  {
+    "word": "heresy",
+    "definition": "Belief or opinion contrary to orthodox doctrine; any belief strongly opposed to established views.",
+    "connotation": "Originally religious, now used broadly — implies dangerous or forbidden disagreement.",
+    "roots": "Greek 'hairesis' (choice). Choosing your OWN belief over the official one.",
+    "tier": 2
+  },
+  {
+    "word": "iconoclast",
+    "definition": "A person who attacks or criticizes cherished beliefs or institutions.",
+    "connotation": "Can be admiring (brave rebel) or critical (destructive contrarian). Depends on whose side you're on.",
+    "roots": "Greek 'eikon' (image) + 'klastes' (breaker). Literally an IMAGE BREAKER — destroying sacred icons.",
+    "tier": 3
+  },
+  {
+    "word": "idiosyncratic",
+    "definition": "Relating to a distinctive or peculiar feature of an individual; uniquely characteristic.",
+    "connotation": "Neutral to positive — implies charming uniqueness, not weirdness.",
+    "roots": "Greek 'idios' (one's own) + 'syn' (together) + 'krasis' (mixture). Your OWN unique mixture of traits.",
+    "tier": 2
+  },
+  {
+    "word": "immutable",
+    "definition": "Unchanging over time or unable to be changed.",
+    "connotation": "Can be positive (immutable principles) or limiting (immutable constraints).",
+    "roots": "Latin 'im-' (not) + 'mutabilis' (changeable). NOT changeable. Opposite of 'mutable.'",
+    "tier": 2
+  },
+  {
+    "word": "impede",
+    "definition": "To delay or prevent the progress of something; to obstruct.",
+    "connotation": "Implies active blocking — something or someone is in the way.",
+    "roots": "Latin 'im-' (in) + 'pes/pedis' (foot). Something IN your FEET — tripping you up.",
+    "tier": 1
+  },
+  {
+    "word": "impartial",
+    "definition": "Treating all rivals or disputants equally; fair and just; not biased.",
+    "connotation": "Positive — implies fairness and lack of favoritism.",
+    "roots": "Latin 'im-' (not) + 'partialis' (partial). NOT taking a side.",
+    "tier": 1
+  },
+  {
+    "word": "impervious",
+    "definition": "Not allowing something to pass through; unable to be affected by.",
+    "connotation": "Can be physical (impervious to water) or emotional (impervious to criticism).",
+    "roots": "Latin 'im-' (not) + 'pervius' (passable). NOT passable — nothing gets through.",
+    "tier": 2
+  },
+  {
+    "word": "implacable",
+    "definition": "Unable to be calmed or appeased; relentlessly hostile.",
+    "connotation": "Intimidating — implies an enemy or force that WILL NOT stop.",
+    "roots": "Latin 'im-' (not) + 'placare' (to please, appease). Cannot be PLEASED or calmed.",
+    "tier": 2
+  },
+  {
+    "word": "implicit",
+    "definition": "Implied though not directly expressed; understood without being stated.",
+    "connotation": "Subtle — the message is THERE, but you have to read between the lines.",
+    "roots": "Latin 'implicare' (to enfold). The meaning is FOLDED IN — you have to unfold it to see it.",
+    "tier": 1
+  },
+  {
+    "word": "inadvertent",
+    "definition": "Not resulting from or achieved through deliberate planning; unintentional.",
+    "connotation": "Implies accident — 'I didn't mean to.' Softer than 'negligent.'",
+    "roots": "Latin 'in-' (not) + 'advertere' (to turn toward). NOT turning your attention toward it — an oversight.",
+    "tier": 1
+  },
+  {
+    "word": "incisive",
+    "definition": "Intelligently analytical and clear-thinking; sharp and direct.",
+    "connotation": "Strongly positive — implies a mind that cuts through confusion.",
+    "roots": "Latin 'incidere' (to cut into). Cutting INTO the heart of a problem.",
+    "tier": 2
+  },
+  {
+    "word": "incongruous",
+    "definition": "Not in harmony or keeping with the surroundings; out of place.",
+    "connotation": "Implies awkward mismatch — something that just doesn't FIT.",
+    "roots": "Latin 'in-' (not) + 'congruus' (agreeing). NOT agreeing with its surroundings.",
+    "tier": 2
+  },
+  {
+    "word": "indifferent",
+    "definition": "Having no particular interest or sympathy; unconcerned.",
+    "connotation": "KEY DISTINCTION: 'ambivalent' = torn between two feelings. 'Indifferent' = NO feeling at all.",
+    "roots": "Latin 'in-' (not) + 'differens' (differing). Making NO difference to you — you don't care either way.",
+    "tier": 1
+  },
+  {
+    "word": "indignant",
+    "definition": "Feeling or showing anger or annoyance at what is perceived as unfair treatment.",
+    "connotation": "Righteous — implies the anger is JUSTIFIED. Different from just 'angry.'",
+    "roots": "Latin 'in-' (not) + 'dignus' (worthy). Feeling treated as NOT WORTHY — and being angry about it.",
+    "tier": 1
+  },
+  {
+    "word": "ingenious",
+    "definition": "Cleverly inventive or resourceful; showing remarkable originality.",
+    "connotation": "Strongly positive — implies creative problem-solving. NOT 'ingenuous' (naive/innocent)!",
+    "roots": "Latin 'ingenium' (natural ability, talent). Born WITH talent.",
+    "tier": 1
+  },
+  {
+    "word": "inherent",
+    "definition": "Existing as a natural or permanent part of something; built-in.",
+    "connotation": "Implies something is inseparable from the thing itself — not added, but PART OF it.",
+    "roots": "Latin 'in-' (in) + 'haerere' (to stick). Sticking IN something — can't be removed.",
+    "tier": 1
+  },
+  {
+    "word": "innocuous",
+    "definition": "Not harmful or offensive; harmless.",
+    "connotation": "Implies something that SEEMS like it could be concerning but actually isn't.",
+    "roots": "Latin 'in-' (not) + 'nocuus' (harmful). NOT harmful.",
+    "tier": 2
+  },
+  {
+    "word": "insipid",
+    "definition": "Lacking flavor, vigor, or interest; dull and uninspiring.",
+    "connotation": "Dismissive — implies boring blandness, food or ideas with no taste.",
+    "roots": "Latin 'in-' (not) + 'sapidus' (tasty). NOT tasty — no flavor at all.",
+    "tier": 2
+  },
+  {
+    "word": "instigate",
+    "definition": "To bring about or initiate an action or event, especially a controversial one.",
+    "connotation": "Usually negative — implies provoking trouble or conflict deliberately.",
+    "roots": "Latin 'instigare' (to urge, incite). Poking someone into action.",
+    "tier": 1
+  },
+  {
+    "word": "intrepid",
+    "definition": "Fearless and adventurous; brave in the face of danger.",
+    "connotation": "Admiring — implies courage that inspires, not reckless foolishness.",
+    "roots": "Latin 'in-' (not) + 'trepidus' (alarmed). NOT alarmed — unshakeable.",
+    "tier": 1
+  },
+  {
+    "word": "juxtapose",
+    "definition": "To place close together for contrasting effect; to compare by putting side by side.",
+    "connotation": "Analytical — implies deliberate comparison to reveal differences or ironies.",
+    "roots": "Latin 'juxta' (beside) + French 'poser' (to place). Placing things BESIDE each other.",
+    "tier": 1
+  },
+  {
+    "word": "laconic",
+    "definition": "Using very few words; brief and concise to the point of seeming rude.",
+    "connotation": "Can be admiring (strong silent type) or critical (unhelpfully terse).",
+    "roots": "From Laconia (Sparta's region). Spartans were famous for using minimal words. When Philip II threatened 'If I invade, I shall destroy Sparta,' the Spartans replied: 'If.'",
+    "tier": 2
+  },
+  {
+    "word": "lament",
+    "definition": "To express passionate grief or sorrow; a song or poem expressing deep mourning.",
+    "connotation": "Deep and poetic sadness — not casual disappointment.",
+    "roots": "Latin 'lamentum' (a wailing, moaning). Raw vocal grief.",
+    "tier": 1
+  },
+  {
+    "word": "languid",
+    "definition": "Displaying or having a disinclination for physical exertion; slow and relaxed.",
+    "connotation": "Can be negative (lazy) or romantic (dreamy, unhurried). Context matters.",
+    "roots": "Latin 'languidus' (faint, listless). Same root as 'languish.' Fading energy.",
+    "tier": 2
+  },
+  {
+    "word": "laud",
+    "definition": "To praise highly, especially in a public context.",
+    "connotation": "Formal and elevated — implies official recognition or honor.",
+    "roots": "Latin 'laudare' (to praise). Same root as 'laudatory.' Public praise.",
+    "tier": 2
+  },
+  {
+    "word": "lethargic",
+    "definition": "Affected by lethargy; sluggish, apathetic, lacking energy.",
+    "connotation": "Negative — implies unhealthy lack of motivation, not just being tired.",
+    "roots": "Greek 'lethe' (forgetfulness) + 'argos' (idle). In Greek myth, Lethe was the river of FORGETTING in the underworld.",
+    "tier": 1
+  },
+  {
+    "word": "lucid",
+    "definition": "Expressed clearly; easy to understand. Also: mentally clear and rational.",
+    "connotation": "Positive — implies clarity and light in thinking or expression.",
+    "roots": "Latin 'lucidus' (light, clear), from 'lux' (light). Full of LIGHT — transparent, clear.",
+    "tier": 1
+  },
+  {
+    "word": "magnanimous",
+    "definition": "Generous or forgiving, especially toward a rival or less powerful person.",
+    "connotation": "Noble — implies generosity from a position of strength. The winner being gracious.",
+    "roots": "Latin 'magnus' (great) + 'animus' (soul). Having a GREAT SOUL.",
+    "tier": 2
+  },
+  {
+    "word": "malleable",
+    "definition": "Easily influenced or changed; capable of being shaped or bent.",
+    "connotation": "Can be positive (adaptable, open-minded) or negative (weak-willed, easily manipulated).",
+    "roots": "Latin 'malleare' (to hammer). Can be HAMMERED into shape.",
+    "tier": 1
+  },
+  {
+    "word": "meticulous",
+    "definition": "Showing great attention to detail; very careful and precise.",
+    "connotation": "Positive — implies thoroughness and professionalism.",
+    "roots": "Latin 'meticulosus' (fearful). Originally meant FEARFUL of making mistakes — evolved to careful.",
+    "tier": 1
+  },
+  {
+    "word": "mitigate",
+    "definition": "To make something less severe, serious, or painful.",
+    "connotation": "Practical — implies reducing harm, not eliminating it entirely.",
+    "roots": "Latin 'mitigare' (to soften), from 'mitis' (soft, gentle). Making something SOFTER.",
+    "tier": 1
+  },
+  {
+    "word": "mundane",
+    "definition": "Lacking interest or excitement; dull; relating to the ordinary world.",
+    "connotation": "Dismissive — implies tedious everyday routine.",
+    "roots": "Latin 'mundanus' (of the world), from 'mundus' (world). Of THIS world — not spiritual or elevated.",
+    "tier": 1
+  },
+  {
+    "word": "negate",
+    "definition": "To nullify or make ineffective; to deny the existence or truth of.",
+    "connotation": "Implies cancellation — wiping something out entirely.",
+    "roots": "Latin 'negare' (to deny). Direct denial — making something NOT.",
+    "tier": 1
+  },
+  {
+    "word": "nonchalant",
+    "definition": "Feeling or appearing casually calm and relaxed; not displaying anxiety or interest.",
+    "connotation": "Cool — implies effortless composure, but can suggest carelessness.",
+    "roots": "French 'non-' (not) + 'chaloir' (to be concerned). NOT concerned — unfazed.",
+    "tier": 1
+  },
+  {
+    "word": "nostalgia",
+    "definition": "A sentimental longing for the past, typically for a period with happy personal associations.",
+    "connotation": "Bittersweet — pleasure mixed with sadness that the time is gone.",
+    "roots": "Greek 'nostos' (return home) + 'algos' (pain). The PAIN of wanting to RETURN HOME.",
+    "tier": 1
+  },
+  {
+    "word": "novel",
+    "definition": "New and not resembling something formerly known or used; original.",
+    "connotation": "Positive — implies refreshing originality. Don't confuse with the literary form.",
+    "roots": "Latin 'novellus' (new), from 'novus' (new). Something genuinely NEW.",
+    "tier": 1
+  },
+  {
+    "word": "nuance",
+    "definition": "A subtle difference in meaning, expression, or sound; a fine distinction.",
+    "connotation": "Sophisticated — implies careful attention to subtlety. A 'nuanced' view is a compliment.",
+    "roots": "French 'nuer' (to shade), from Latin 'nubes' (cloud). Shades of meaning, like shades of COLOR in a cloud.",
+    "tier": 1
+  },
+  {
+    "word": "obdurate",
+    "definition": "Stubbornly refusing to change one's opinion or course of action.",
+    "connotation": "Negative — implies harmful, unreasonable stubbornness.",
+    "roots": "Latin 'ob-' (against) + 'durare' (to harden). HARDENED against persuasion.",
+    "tier": 3
+  },
+  {
+    "word": "obsequious",
+    "definition": "Excessively compliant or deferential; servile to the point of losing dignity.",
+    "connotation": "Strongly negative — implies pathetic, self-degrading flattery.",
+    "roots": "Latin 'ob-' (toward) + 'sequi' (to follow). Following someone around like a puppy.",
+    "tier": 3
+  },
+  {
+    "word": "obsolete",
+    "definition": "No longer produced or used; out of date.",
+    "connotation": "Implies something has been REPLACED by something better — it's not just old, it's surpassed.",
+    "roots": "Latin 'obsolescere' (to wear out, fall into disuse). Worn OUT by time.",
+    "tier": 1
+  },
+  {
+    "word": "obstinate",
+    "definition": "Stubbornly refusing to change one's opinion or chosen course of action despite persuasion.",
+    "connotation": "Negative — implies unreasonable stubbornness. Stronger than 'stubborn.'",
+    "roots": "Latin 'obstinare' (to persist). Persisting even when you shouldn't.",
+    "tier": 1
+  },
+  {
+    "word": "onerous",
+    "definition": "Involving an amount of effort and difficulty that is oppressively burdensome.",
+    "connotation": "Heavy — implies the burden is unfair or excessive.",
+    "roots": "Latin 'onerosus' (burdensome), from 'onus' (burden). Same root as 'onus.' A heavy BURDEN.",
+    "tier": 2
+  },
+  {
+    "word": "opaque",
+    "definition": "Not transparent; difficult to understand or explain; unclear.",
+    "connotation": "Negative when describing communication — implies deliberate or frustrating lack of clarity.",
+    "roots": "Latin 'opacus' (shaded, dark). Light can't pass through — you can't SEE through it.",
+    "tier": 1
+  },
+  {
+    "word": "ornate",
+    "definition": "Made or decorated in an elaborate, detailed way; excessively decorated.",
+    "connotation": "Can be admiring (beautiful craftsmanship) or critical (over-the-top, gaudy).",
+    "roots": "Latin 'ornare' (to adorn). Adorned — decorated beyond the simple.",
+    "tier": 1
+  },
+  {
+    "word": "ostentatious",
+    "definition": "Designed to impress or attract notice; showy in a vulgar or tasteless way.",
+    "connotation": "Negative — implies showing off wealth or status for attention.",
+    "roots": "Latin 'ostentare' (to display). Putting yourself on DISPLAY.",
+    "tier": 2
+  },
+  {
+    "word": "pacify",
+    "definition": "To bring peace to; to calm someone's anger or agitation.",
+    "connotation": "Can be positive (calming a situation) or condescending (pacifying a child/crowd).",
+    "roots": "Latin 'pax' (peace) + 'facere' (to make). MAKING PEACE.",
+    "tier": 1
+  },
+  {
+    "word": "paradox",
+    "definition": "A seemingly absurd or contradictory statement that may nonetheless be true.",
+    "connotation": "Intellectually stimulating — implies a deeper truth hidden in the contradiction.",
+    "roots": "Greek 'para-' (contrary to) + 'doxa' (opinion). CONTRARY to common OPINION.",
+    "tier": 1
+  },
+  {
+    "word": "parsimonious",
+    "definition": "Excessively unwilling to spend money or use resources; extremely frugal to the point of stinginess.",
+    "connotation": "Negative — unlike 'frugal' (wise), parsimonious implies EXCESSIVE cheapness.",
+    "roots": "Latin 'parsimonia' (thrift), from 'parcere' (to spare). Sparing to an extreme.",
+    "tier": 3
+  },
+  {
+    "word": "partisan",
+    "definition": "A strong supporter of a party, cause, or person; showing biased, one-sided support.",
+    "connotation": "Usually negative in analytical writing — implies bias over fairness.",
+    "roots": "Italian 'partigiano' (member of a party). Taking a PARTY's side no matter what.",
+    "tier": 1
+  },
+  {
+    "word": "pedantic",
+    "definition": "Excessively concerned with minor details or rules; showing off learning.",
+    "connotation": "Negative — implies annoying, nitpicky focus on unimportant details.",
+    "roots": "Italian 'pedante' (teacher). Like a bad TEACHER who focuses on trivia instead of understanding.",
+    "tier": 2
+  },
+  {
+    "word": "perfunctory",
+    "definition": "Carried out with a minimum of effort or reflection; done as a routine duty.",
+    "connotation": "Negative — implies going through the motions without care or thought.",
+    "roots": "Latin 'perfunctorius' (careless), from 'perfungi' (to get through). Just GETTING THROUGH it.",
+    "tier": 2
+  },
+  {
+    "word": "peripheral",
+    "definition": "Relating to or situated on the edge; of secondary importance; marginal.",
+    "connotation": "Implies something is NOT central — on the edges, easily overlooked.",
+    "roots": "Greek 'periphereia' (circumference). On the CIRCUMFERENCE, not the center.",
+    "tier": 1
+  },
+  {
+    "word": "pervasive",
+    "definition": "Spreading widely throughout an area or group; present everywhere.",
+    "connotation": "Usually negative — 'pervasive inequality,' 'pervasive corruption.' Implies something you can't escape.",
+    "roots": "Latin 'per-' (through) + 'vadere' (to go). Going THROUGH everything — penetrating everywhere.",
+    "tier": 1
+  },
+  {
+    "word": "placate",
+    "definition": "To make someone less angry or hostile; to calm or appease.",
+    "connotation": "Implies the person is angry and you're trying to calm them down — often by giving in.",
+    "roots": "Latin 'placare' (to calm). Direct: to CALM.",
+    "tier": 2
+  },
+  {
+    "word": "polemical",
+    "definition": "Of or involving strongly critical, controversial, or disputatious writing or speech.",
+    "connotation": "Aggressive intellectually — implies writing that ATTACKS, not just disagrees.",
+    "roots": "Greek 'polemikos' (warlike), from 'polemos' (war). Intellectual WARFARE.",
+    "tier": 3
+  },
+  {
+    "word": "pragmatic",
+    "definition": "Dealing with things sensibly and realistically; focused on practical results.",
+    "connotation": "Positive — implies being grounded and effective, not lost in theory.",
+    "roots": "Greek 'pragma' (deed, act). Focused on DEEDS, not just ideas.",
+    "tier": 1
+  },
+  {
+    "word": "precarious",
+    "definition": "Not securely held or in position; dependent on chance; dangerously uncertain.",
+    "connotation": "Anxious — implies something could collapse at any moment.",
+    "roots": "Latin 'precarius' (obtained by prayer). Originally: held only by someone else's GOODWILL — could be taken away.",
+    "tier": 1
+  },
+  {
+    "word": "precedent",
+    "definition": "An earlier event or action regarded as an example or guide for future situations.",
+    "connotation": "Legal and formal — implies past decisions SHOULD influence future ones.",
+    "roots": "Latin 'prae-' (before) + 'cedere' (to go). Something that WENT BEFORE and sets the path.",
+    "tier": 1
+  },
+  {
+    "word": "preclude",
+    "definition": "To prevent from happening; to make impossible.",
+    "connotation": "Stronger than 'prevent' — implies closing the door entirely.",
+    "roots": "Latin 'prae-' (before) + 'claudere' (to close). Closing the door BEFORE someone can enter.",
+    "tier": 2
+  },
+  {
+    "word": "prescient",
+    "definition": "Having or showing knowledge of events before they take place; foreseeing the future.",
+    "connotation": "Admiring — implies impressive foresight and wisdom.",
+    "roots": "Latin 'prae-' (before) + 'scire' (to know). KNOWING BEFORE it happens.",
+    "tier": 3
+  },
+  {
+    "word": "pristine",
+    "definition": "In its original condition; unspoiled; immaculately clean.",
+    "connotation": "Implies untouched purity — no damage, no contamination.",
+    "roots": "Latin 'pristinus' (former, original). In its ORIGINAL state — as it was meant to be.",
+    "tier": 1
+  },
+  {
+    "word": "prodigal",
+    "definition": "Spending money or resources freely and recklessly; wastefully extravagant.",
+    "connotation": "Negative — implies irresponsible waste. Famous from the 'Prodigal Son' parable.",
+    "roots": "Latin 'prodigus' (wasteful), from 'prodigere' (to drive forth, squander). Driving your wealth AWAY.",
+    "tier": 2
+  },
+  {
+    "word": "profound",
+    "definition": "Very great or intense; showing deep insight or understanding.",
+    "connotation": "Implies depth — going beneath the surface to something important.",
+    "roots": "Latin 'pro-' (forward) + 'fundus' (bottom). Going to the very BOTTOM — deep.",
+    "tier": 1
+  },
+  {
+    "word": "proliferate",
+    "definition": "To increase rapidly in number; to multiply and spread.",
+    "connotation": "Can be neutral (cells proliferate) or concerning (weapons proliferate).",
+    "roots": "Latin 'proles' (offspring) + 'ferre' (to bear). Bearing OFFSPRING rapidly.",
+    "tier": 1
+  },
+  {
+    "word": "propensity",
+    "definition": "An inclination or natural tendency to behave in a particular way.",
+    "connotation": "Neutral — implies a built-in leaning, not a conscious choice.",
+    "roots": "Latin 'pro-' (forward) + 'pendere' (to hang). Hanging FORWARD toward something — leaning into it.",
+    "tier": 2
+  },
+  {
+    "word": "prosaic",
+    "definition": "Having the style or diction of prose; lacking poetic beauty; commonplace and unimaginative.",
+    "connotation": "Dismissive — implies boring, unimaginative ordinariness.",
+    "roots": "Latin 'prosa' (prose). Like PROSE — plain, not poetic. The opposite of inspired.",
+    "tier": 2
+  },
+  {
+    "word": "prudent",
+    "definition": "Acting with or showing care and thought for the future; wise and sensible.",
+    "connotation": "Positive — implies wisdom and foresight, not excessive caution.",
+    "roots": "Latin 'prudens' (foreseeing), contraction of 'providens.' Seeing AHEAD and planning accordingly.",
+    "tier": 1
+  },
+  {
+    "word": "querulous",
+    "definition": "Complaining in a petulant or whining manner.",
+    "connotation": "Negative — implies annoying, unjustified complaining.",
+    "roots": "Latin 'querulus' (complaining), from 'queri' (to complain). Pure complaint.",
+    "tier": 3
+  },
+  {
+    "word": "quixotic",
+    "definition": "Extremely idealistic; unrealistic and impractical.",
+    "connotation": "Bittersweet — admires the idealism while acknowledging it's doomed to fail.",
+    "roots": "From Don Quixote, Cervantes' idealistic knight who tilted at windmills. Noble but hopeless.",
+    "tier": 2
+  },
+  {
+    "word": "rancor",
+    "definition": "Bitterness or resentfulness, especially when long-standing.",
+    "connotation": "Deep and festering — implies hatred that has been building for a long time.",
+    "roots": "Latin 'rancor' (rankness, a stinking smell). Hatred that ROTS and stinks over time.",
+    "tier": 2
+  },
+  {
+    "word": "recalcitrant",
+    "definition": "Having an obstinately uncooperative attitude toward authority or discipline.",
+    "connotation": "Negative — implies defiant resistance to rules or direction.",
+    "roots": "Latin 're-' (back) + 'calcitrare' (to kick). Kicking BACK — like a stubborn horse.",
+    "tier": 3
+  },
+  {
+    "word": "recluse",
+    "definition": "A person who lives a solitary life and avoids other people.",
+    "connotation": "Can be neutral (values privacy) or concerning (unhealthy isolation).",
+    "roots": "Latin 'recludere' (to shut away). SHUT AWAY from the world.",
+    "tier": 1
+  },
+  {
+    "word": "reconcile",
+    "definition": "To restore friendly relations; to make compatible two apparently conflicting things.",
+    "connotation": "Implies effort — bridging a gap that exists between people or ideas.",
+    "roots": "Latin 're-' (again) + 'conciliare' (to bring together). Bringing together AGAIN.",
+    "tier": 1
+  },
+  {
+    "word": "refute",
+    "definition": "To prove a statement or theory to be wrong or false.",
+    "connotation": "Stronger than 'deny' — 'refute' means you have EVIDENCE, not just disagreement.",
+    "roots": "Latin 'refutare' (to drive back). Driving a claim BACK with evidence.",
+    "tier": 1
+  },
+  {
+    "word": "relegate",
+    "definition": "To consign to a lower rank or less important position; to demote.",
+    "connotation": "Implies loss of status — being pushed DOWN from where you were.",
+    "roots": "Latin 're-' (back) + 'legare' (to send). Sent BACK — demoted.",
+    "tier": 2
+  },
+  {
+    "word": "relinquish",
+    "definition": "To voluntarily give up power, a position, or a claim; to let go.",
+    "connotation": "Implies reluctance — you're giving up something you VALUE.",
+    "roots": "Latin 're-' (back) + 'linquere' (to leave). Leaving something BEHIND — letting it go.",
+    "tier": 1
+  },
+  {
+    "word": "repudiate",
+    "definition": "To refuse to accept or be associated with; to deny the truth or validity of.",
+    "connotation": "Forceful — implies strong, public rejection.",
+    "roots": "Latin 'repudiare' (to cast off, divorce). Originally meant divorcing a wife — complete REJECTION.",
+    "tier": 2
+  },
+  {
+    "word": "resilient",
+    "definition": "Able to recover quickly from difficulties; able to spring back into shape.",
+    "connotation": "Strongly positive — implies toughness and adaptability.",
+    "roots": "Latin 'resilire' (to spring back). Springing BACK after being hit.",
+    "tier": 1
+  },
+  {
+    "word": "reticent",
+    "definition": "Not revealing one's thoughts or feelings readily; reserved.",
+    "connotation": "Neutral to sympathetic — implies chosen silence, not inability to speak.",
+    "roots": "Latin 'reticere' (to keep silent). Choosing to be SILENT.",
+    "tier": 2
+  },
+  {
+    "word": "reverent",
+    "definition": "Feeling or showing deep respect or admiration.",
+    "connotation": "Implies awe — almost religious in the depth of respect shown.",
+    "roots": "Latin 'revereri' (to stand in awe of). Standing in AWE.",
+    "tier": 1
+  },
+  {
+    "word": "rhetorical",
+    "definition": "Relating to or concerned with the art of effective or persuasive speaking or writing; asked to make a point rather than to get an answer.",
+    "connotation": "Can be admiring (rhetorical skill) or dismissive ('just rhetoric' = empty words).",
+    "roots": "Greek 'rhetor' (orator). The art of the ORATOR — persuasion through speech.",
+    "tier": 1
+  },
+  {
+    "word": "robust",
+    "definition": "Strong and healthy; vigorous; able to withstand demanding conditions.",
+    "connotation": "Positive — implies strength AND durability, not just current health.",
+    "roots": "Latin 'robustus' (strong), from 'robur' (oak tree, strength). Strong as an OAK.",
+    "tier": 1
+  },
+  {
+    "word": "sagacious",
+    "definition": "Having or showing keen mental discernment and good judgment; shrewd and wise.",
+    "connotation": "High praise — implies practical wisdom, not just book smarts.",
+    "roots": "Latin 'sagax' (keen-scented). Originally: a dog that can SMELL the trail. Metaphor: sensing the right path.",
+    "tier": 3
+  },
+  {
+    "word": "sanguine",
+    "definition": "Optimistic or positive, especially in a difficult situation.",
+    "connotation": "Implies confident optimism — believing things will work out despite challenges.",
+    "roots": "Latin 'sanguineus' (of blood). Medieval belief: people with lots of BLOOD were cheerful and confident.",
+    "tier": 2
+  },
+  {
+    "word": "sardonic",
+    "definition": "Grimly mocking or cynical; scornfully humorous.",
+    "connotation": "Dark — implies bitter, biting humor that comes from disillusionment.",
+    "roots": "Greek 'sardonios' (bitter laugh). A laugh that's actually a grimace — laughing when you should cry.",
+    "tier": 2
+  },
+  {
+    "word": "scrutinize",
+    "definition": "To examine or inspect closely and thoroughly.",
+    "connotation": "Implies suspicion — looking HARD for flaws or hidden details.",
+    "roots": "Latin 'scrutinium' (a search). Originally: rummaging through trash. Searching through the mess for truth.",
+    "tier": 1
+  },
+  {
+    "word": "skeptical",
+    "definition": "Not easily convinced; having doubts or reservations.",
+    "connotation": "Usually positive on the SAT — implies healthy questioning, not cynicism.",
+    "roots": "Greek 'skeptikos' (inquiring, reflective). Someone who INQUIRES rather than accepting blindly.",
+    "tier": 1
+  },
+  {
+    "word": "soporific",
+    "definition": "Tending to induce drowsiness or sleep; extremely boring.",
+    "connotation": "Negative — implies something so dull it puts you to sleep.",
+    "roots": "Latin 'sopor' (deep sleep). Inducing DEEP SLEEP.",
+    "tier": 3
+  },
+  {
+    "word": "specious",
+    "definition": "Superficially plausible but actually wrong; misleading in appearance.",
+    "connotation": "Dangerous — implies something that LOOKS right but IS wrong. A beautiful lie.",
+    "roots": "Latin 'speciosus' (fair, beautiful). Something that looks BEAUTIFUL on the surface but is rotten inside.",
+    "tier": 2
+  },
+  {
+    "word": "sporadic",
+    "definition": "Occurring at irregular intervals; not continuous or steady.",
+    "connotation": "Implies unreliability — you can't count on it happening regularly.",
+    "roots": "Greek 'sporadikos' (scattered), from 'sporas' (seed). Seeds scattered randomly — no pattern.",
+    "tier": 1
+  },
+  {
+    "word": "stoic",
+    "definition": "Enduring pain and hardship without showing feelings or complaining.",
+    "connotation": "Admiring — implies strength through suffering in silence.",
+    "roots": "Greek 'Stoa' (porch). The Stoic philosophers taught at the Painted Porch in Athens. Philosophy of endurance.",
+    "tier": 1
+  },
+  {
+    "word": "subvert",
+    "definition": "To undermine the power and authority of an established system or institution.",
+    "connotation": "Implies working from within to destroy — subtle, not frontal attack.",
+    "roots": "Latin 'sub-' (under) + 'vertere' (to turn). Turning something UNDER — overturning from below.",
+    "tier": 2
+  },
+  {
+    "word": "superfluous",
+    "definition": "Unnecessary, especially through being more than enough; excessive.",
+    "connotation": "Implies waste — more than needed, therefore pointless.",
+    "roots": "Latin 'super-' (over) + 'fluere' (to flow). OVERFLOWING — more than the container can hold.",
+    "tier": 1
+  },
+  {
+    "word": "supplant",
+    "definition": "To take the place of someone or something, especially through scheming.",
+    "connotation": "Implies treachery — not just replacing, but pushing out the original.",
+    "roots": "Latin 'sub-' (under) + 'planta' (sole of foot). Tripping someone by kicking their FEET from under them.",
+    "tier": 2
+  },
+  {
+    "word": "sycophant",
+    "definition": "A person who flatters someone important in order to gain advantage.",
+    "connotation": "Strongly negative — implies insincere, self-serving flattery.",
+    "roots": "Greek 'sykophantes' (informer). Originally someone who informed on fig smugglers — evolved to mean any manipulative flatterer.",
+    "tier": 2
+  },
+  {
+    "word": "tacit",
+    "definition": "Understood or implied without being stated; unspoken.",
+    "connotation": "Implies shared understanding — everyone knows, nobody says it.",
+    "roots": "Latin 'tacitus' (silent), from 'tacere' (to be silent). SILENT agreement.",
+    "tier": 2
+  },
+  {
+    "word": "tenacious",
+    "definition": "Tending to keep a firm hold of something; persistent and determined.",
+    "connotation": "Strongly positive — implies admirable refusal to give up.",
+    "roots": "Latin 'tenax' (holding fast), from 'tenere' (to hold). HOLDING ON and never letting go.",
+    "tier": 1
+  },
+  {
+    "word": "terse",
+    "definition": "Using few words; devoid of superfluity; abruptly concise.",
+    "connotation": "Can be positive (efficiently brief) or negative (rudely short). Context decides.",
+    "roots": "Latin 'tersus' (wiped clean, polished). Words WIPED CLEAN of excess — nothing left but the essential.",
+    "tier": 2
+  },
+  {
+    "word": "torpid",
+    "definition": "Mentally or physically inactive; sluggish; in a state of suspended activity.",
+    "connotation": "Negative — implies unhealthy inactivity, like a hibernating animal.",
+    "roots": "Latin 'torpere' (to be numb, stiff). Same root as 'torpedo' (a fish that numbs you). NUMBED into stillness.",
+    "tier": 3
+  },
+  {
+    "word": "transient",
+    "definition": "Lasting only for a short time; temporary; passing through.",
+    "connotation": "Bittersweet or philosophical — implies impermanence of all things.",
+    "roots": "Latin 'trans-' (across) + 'ire' (to go). GOING ACROSS — just passing through, not staying.",
+    "tier": 1
+  },
+  {
+    "word": "trepidation",
+    "definition": "A feeling of fear or anxiety about something that may happen.",
+    "connotation": "More formal and visceral than 'nervousness' — implies trembling apprehension.",
+    "roots": "Latin 'trepidare' (to tremble). Literally TREMBLING with fear.",
+    "tier": 2
+  },
+  {
+    "word": "trivial",
+    "definition": "Of little value or importance; insignificant.",
+    "connotation": "Dismissive — implies something isn't worth serious attention.",
+    "roots": "Latin 'trivium' (place where three roads meet). Common crossroads where anyone passed — therefore COMMON and unimportant.",
+    "tier": 1
+  },
+  {
+    "word": "ubiquitous",
+    "definition": "Present, appearing, or found everywhere.",
+    "connotation": "Neutral to slightly overwhelming — implies you can't escape it.",
+    "roots": "Latin 'ubique' (everywhere). EVERYWHERE at once.",
+    "tier": 1
+  },
+  {
+    "word": "undermine",
+    "definition": "To damage or weaken something gradually or insidiously.",
+    "connotation": "Implies stealth — the damage happens slowly, from beneath, often unnoticed until too late.",
+    "roots": "Under + mine. Literally digging a MINE UNDER a fortress to collapse it.",
+    "tier": 1
+  },
+  {
+    "word": "underscore",
+    "definition": "To emphasize or stress the importance of something.",
+    "connotation": "Implies something deserves extra attention — drawing a line UNDER it for emphasis.",
+    "roots": "Under + score (to mark). Drawing a mark UNDER something to highlight it.",
+    "tier": 1
+  },
+  {
+    "word": "unequivocal",
+    "definition": "Leaving no doubt; unambiguous; clear and decisive.",
+    "connotation": "Positive — implies refreshing clarity and directness.",
+    "roots": "Latin 'un-' (not) + 'aequi-' (equal) + 'vocare' (to call). NOT calling in two directions — clear ONE direction.",
+    "tier": 2
+  },
+  {
+    "word": "unprecedented",
+    "definition": "Never done or known before; having no previous example.",
+    "connotation": "Implies significance — something so new it has NO comparison.",
+    "roots": "Un- + precedent. No PRECEDENT exists — first of its kind.",
+    "tier": 1
+  },
+  {
+    "word": "vacillate",
+    "definition": "To alternate between different opinions or actions; to be indecisive.",
+    "connotation": "Negative — implies weakness and inability to commit.",
+    "roots": "Latin 'vacillare' (to sway, totter). Swaying back and forth like a drunk — can't stand firm.",
+    "tier": 2
+  },
+  {
+    "word": "venerate",
+    "definition": "To regard with great respect; to revere.",
+    "connotation": "Implies near-religious devotion — deeper than 'respect' or 'admire.'",
+    "roots": "Latin 'venerari' (to worship). Same root as Venus — worship-level respect.",
+    "tier": 2
+  },
+  {
+    "word": "verbose",
+    "definition": "Using or expressed in more words than are needed; wordy.",
+    "connotation": "Negative — implies wasting the reader/listener's time with unnecessary words.",
+    "roots": "Latin 'verbosus' (wordy), from 'verbum' (word). Too many WORDS.",
+    "tier": 1
+  },
+  {
+    "word": "viable",
+    "definition": "Capable of working successfully; feasible; capable of living.",
+    "connotation": "Practical — implies something could actually WORK, not just sound nice.",
+    "roots": "Latin 'vita' (life). Capable of LIFE — able to survive and function.",
+    "tier": 1
+  },
+  {
+    "word": "vindicate",
+    "definition": "To clear someone of blame or suspicion; to show or prove to be right.",
+    "connotation": "Triumphant — implies being proven RIGHT after being doubted.",
+    "roots": "Latin 'vindicare' (to claim, avenge). Claiming your RIGHT to be cleared.",
+    "tier": 2
+  },
+  {
+    "word": "virulent",
+    "definition": "Extremely severe or harmful in its effects; bitterly hostile.",
+    "connotation": "Aggressive — implies something that attacks and destroys, whether disease or criticism.",
+    "roots": "Latin 'virulentus' (poisonous), from 'virus' (poison). Full of POISON.",
+    "tier": 2
+  },
+  {
+    "word": "volatile",
+    "definition": "Liable to change rapidly and unpredictably, especially for the worse.",
+    "connotation": "Dangerous — implies instability that could explode at any moment.",
+    "roots": "Latin 'volatilis' (flying), from 'volare' (to fly). Something that could FLY OFF at any moment.",
+    "tier": 1
+  },
+  {
+    "word": "voracious",
+    "definition": "Having a very eager approach to something; wanting or devouring great quantities.",
+    "connotation": "Can be positive (voracious reader) or negative (voracious appetite for power).",
+    "roots": "Latin 'vorax' (swallowing), from 'vorare' (to devour). DEVOURING everything in sight.",
+    "tier": 1
+  },
+  {
+    "word": "wary",
+    "definition": "Feeling or showing caution about possible dangers or problems.",
+    "connotation": "Implies wisdom — being careful because you've learned to watch out.",
+    "roots": "Old English 'wær' (aware, cautious). AWARE of danger — eyes open.",
+    "tier": 1
+  },
+  {
+    "word": "zealous",
+    "definition": "Having or showing great energy or enthusiasm in pursuit of a cause or objective.",
+    "connotation": "Can be positive (passionate) or negative (fanatical). Intensity can go either way.",
+    "roots": "Greek 'zelos' (zeal, jealousy). Burning passion — same root as 'jealousy' (intense feeling).",
+    "tier": 1
+  }
+]
